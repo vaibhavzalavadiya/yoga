@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="author" content="yoga-bliss" />
+    <meta name="description" content="yoga-bliss" />
+    <meta name="keywords" content="yoga-bliss" />
+    <link rel="icon" href="assets/images/favicon.png" />
+    <title>yoga-bliss</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="swiper-bundle.min.css" />
+    <link rel="stylesheet" href="tailwind.css" />
+</head>                               
+
+  <body>
+    <div class="overlay"></div>
+
+    <header
+      id="mainHeader"
+      class="sticky top-0 w-full z-50 bg-white text-gray-900 transition-all duration-300 ease-in-out"
+    >
+      <div class="md:container w-full mx-auto px-4">
+        <div class="flex items-center justify-between py-3">
+          <h1 class="logo">
+            <a
+              href="index.html"
+              class="block md:max-w-[150px] max-w-[110px] w-full"
+            >
+              <img src="assets/images/logo.png" alt="logo" class="logo-img" />
+            </a>
+          </h1>
+          <nav class="hidden lg:block">
+            <ul class="flex items-center gap-5 font-medium">
+              <li>
+                <div class="relative" id="coursesDropdown">
+                  <button
+                    class="flex items-center transition-colors capitalize"
+                    onclick="toggleDropdown('coursesMenu', this)"
+                  >
+                    Courses
+                    <i class="fas fa-chevron-down ms-1.5 text-xs"></i>
+                  </button>
+                  <div
+                    id="coursesMenu"
+                    class="hidden absolute start-0 mt-2 w-fit dropdown-menu bg-white shadow-md rounded-md z-10"
+                  >
+                    <div
+                      class="flex gap-2 justify-between text-nowrap capitalize"
+                    >
+                      <ul>
+                        <li>
+                          <a
+                            href="product-list.html"
+                            class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300"
+                            >All Courses</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="product-list.html?level=beginner"
+                            class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300"
+                            >Beginner</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="product-list.html?level=intermediate"
+                            class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300"
+                            >Intermediate</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="product-list.html?level=advanced"
+                            class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300"
+                            >Advanced</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="meditation.html"
+                            class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300"
+                            >Meditation</a
+                          >
+                        </li>
+                      </ul>
+                      <ul>
+                        <li>
+                          <a
+                            href="product-list.html?style=hatha"
+                            class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors"
+                            >Hatha Yoga</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="product-list.html?style=vinyasa"
+                            class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors"
+                            >Vinyasa Flow</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="product-list.html?style=yin"
+                            class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors"
+                            >Yin Yoga</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="product-list.html?style=power"
+                            class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors"
+                            >Power Yoga</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="product-list.html?style=restorative"
+                            class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors"
+                            >Restorative</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a
+                  href="instructors.html"
+                  class="rounded-lg text-gray-900 transition-all duration-300"
+                  >Instructors</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="rounded-lg text-gray-900 transition-all duration-300"
+                  >About</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="contact.html"
+                  class="rounded-lg text-gray-900 transition-all duration-300"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="flex items-center gap-3">
+            <!-- Search Button for Mobile -->
+            <button onclick="openSearchPopup()" class="lg:hidden">
+              <i class="fas fa-search text-lg"></i>
+            </button>
+            <!-- Search Bar for Desktop -->
+            <div
+              class="hidden lg:flex items-center bg-transparent px-4 py-2.5 input-search border border-gray-200 rounded-lg"
+            >
+              <i class="fas fa-search text-gray-900 me-3"></i>
+              <input
+                type="text"
+                placeholder="Search courses, instructors..."
+                class="bg-transparent outline-none text-sm w-32 lg:w-48 text-gray-900 placeholder-gray-900"
+              />
+            </div>
+            <!-- Wishlist Button -->
+            <div class="relative">
+              <a
+                href="wishlist.html"
+                class="flex items-center justify-center pe-1.5"
+              >
+                <i class="fas fa-heart lg:text-xl text-lg text-gray-900"></i>
+                <span
+                  class="absolute -top-1.5 -end-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold shadow-lg"
+                  >0</span
+                >
+              </a>
+            </div>
+            <!-- Cart Button -->
+            <div class="relative">
+              <a
+                href="cart.html"
+                class="flex items-center justify-center pe-1.5"
+              >
+                <i
+                  class="fas fa-shopping-cart lg:text-xl text-lg text-gray-900"
+                ></i>
+                <span
+                  class="absolute -top-1.5 -end-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold shadow-lg"
+                  >0</span
+                >
+              </a>
+            </div>
+            <!-- Login Button -->
+            <a href="login.html" class="btn-primary login-btn">
+              <i class="fas fa-user"></i>
+              <span class="hidden lg:block"> Login</span>
+            </a>
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden" id="mobile-menu-toggle">
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile Search Popup -->
+        <div
+          id="search-popup"
+          class="lg:hidden absolute top-full start-0 end-0 bg-white border-t border-slate-200 shadow-lg transform -translate-y-full opacity-0 invisible transition-all duration-300"
+        >
+          <div class="md:container w-full mx-auto px-4 py-4">
+            <div
+              class="flex items-center bg-slate-50 border border-slate-200 rounded-lg px-4 py-1"
+            >
+              <i class="fas fa-search me-3"></i>
+              <input
+                type="text"
+                placeholder="Search courses, instructors..."
+                class="bg-transparent outline-none text-sm flex-1 text-slate-700 placeholder-slate-400"
+                autofocus
+              />
+              <button
+                id="search-close"
+                class="ms-2 p-1 hover:bg-slate-200 rounded"
+              >
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Common Banner Section -->
+      <section
+        class="relative bg-[url('assets/images/common-banner-bg.png')] bg-cover md:bg-left bg-center lg:py-20 py-10"
+      >
+        <div class="md:container w-full mx-auto px-4">
+          <div
+            class="relative z-[2] text-center text-white max-w-2xl mx-auto px-4 flex flex-col items-center justify-center"
+          >
+            <h2 class="text-3xl md:text-5xl font-elsie font-bold mb-3">
+              checkout
+            </h2>
+            <nav
+              class="text-sm flex justify-center gap-2 capitalize"
+            >
+              <a href="index.html" class="hover:underline">Home</a>
+              <span>/</span>
+              <a href="checkout.html" class="hover:underline">checkout</a>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-10 lg:py-20 bg-white">
+        <div class="md:container w-full mx-auto px-4">
+          <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Left Side - Checkout Forms -->
+            <div class="lg:w-2/3">
+              <form class="md:space-y-8 space-y-6">
+                <div>
+                  <h2 class="font-semibold text-xl md:mb-4 mb-3">
+                    1. Account Information
+                  </h2>
+                  <div class="border md:p-6 p-4 rounded-lg shadow-sm">
+                    <!-- Email Field -->
+                    <div class="mb-4">
+                      <label
+                        for="email"
+                        class="block mb-2 font-medium md:text-base text-sm"
+                        >Email Address
+                        <span class="text-red-500">*</span></label
+                      >
+                      <input
+                        type="email"
+                        id="email"
+                        class="form-input"
+                        required=""
+                      />
+                      <p class="text-sm text-gray-500 mt-1">
+                        We'll send course access and confirmation to this email
+                      </p>
+                    </div>
+
+                    <!-- Account Section -->
+                    <div class="mb-4">
+                      <div class="checkbox flex items-center mb-2">
+                        <input
+                          type="checkbox"
+                          id="create-account"
+                          class="rounded border-gray-300 text-primary focus:ring-primary me-2"
+                        />
+                        <label
+                          for="create-account"
+                          class="flex-1 font-medium text-sm md:text-base"
+                          >Create a Yoga Bliss account?</label
+                        >
+                      </div>
+                      <p class="text-sm text-gray-500">
+                        Create an account to track your progress, access courses
+                        anytime, and join our community
+                      </p>
+                    </div>
+
+                    <!-- Password Fields (Initially Hidden) -->
+                    <div class="mb-4 hidden">
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label
+                            for="password"
+                            class="block mb-2 font-medium md:text-base text-sm"
+                            >Password <span class="text-red-500">*</span></label
+                          >
+                          <input
+                            type="password"
+                            id="password"
+                            class="form-input"
+                          />
+                        </div>
+                        <div>
+                          <label
+                            for="confirm-password"
+                            class="block mb-2 font-medium md:text-base text-sm"
+                            >Confirm Password
+                            <span class="text-red-500">*</span></label
+                          >
+                          <input
+                            type="password"
+                            id="confirm-password"
+                            class="form-input"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Billing Information -->
+                    <div>
+                      <label class="block mb-2 font-medium md:text-base text-sm"
+                        >Billing Information
+                        <span class="text-red-500">*</span></label
+                      >
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label
+                            for="first-name"
+                            class="block mb-2 font-medium md:text-base text-sm"
+                            >First Name
+                            <span class="text-red-500">*</span></label
+                          >
+                          <input
+                            type="text"
+                            id="first-name"
+                            class="form-input"
+                            required=""
+                          />
+                        </div>
+                        <div>
+                          <label
+                            for="last-name"
+                            class="block mb-2 font-medium md:text-base text-sm"
+                            >Last Name
+                            <span class="text-red-500">*</span></label
+                          >
+                          <input
+                            type="text"
+                            id="last-name"
+                            class="form-input"
+                            required=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h2 class="font-semibold text-xl md:mb-4 mb-3">
+                    2. Payment Method
+                  </h2>
+                  <div class="border md:p-6 p-4 rounded-lg shadow-sm">
+                    <!-- Payment Options -->
+                    <div class="space-y-3 mb-6">
+                      <div
+                        class="radio-btn flex items-center p-3 border rounded-md"
+                      >
+                        <input
+                          type="radio"
+                          id="payment-card"
+                          name="payment-method"
+                          value="card"
+                          class="text-primary focus:ring-primary me-2"
+                          checked=""
+                        />
+                        <label
+                          for="payment-card"
+                          class="flex items-center w-full"
+                        >
+                          <span class="font-medium me-3"
+                            >Credit/Debit Card</span
+                          >
+                          <div class="flex gap-2">
+                            <span>
+                              <svg
+                                width="20"
+                                height="14"
+                                viewBox="0 0 20 14"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M20 3.36719V2.3125C20 1.10438 19.0206 0.125 17.8125 0.125H2.1875C0.979375 0.125 0 1.10438 0 2.3125V3.36719C0 3.47504 0.0874609 3.5625 0.195312 3.5625H19.8047C19.9125 3.5625 20 3.47504 20 3.36719Z"
+                                  fill="black"
+                                />
+                                <path
+                                  d="M0 5.00781V11.6875C0 12.8956 0.979375 13.875 2.1875 13.875H17.8125C19.0206 13.875 20 12.8956 20 11.6875V5.00781C20 4.89996 19.9125 4.8125 19.8047 4.8125H0.195312C0.0874609 4.8125 0 4.89996 0 5.00781ZM5 10.125C5 10.4702 4.72016 10.75 4.375 10.75H3.75C3.40484 10.75 3.125 10.4702 3.125 10.125V9.5C3.125 9.15484 3.40484 8.875 3.75 8.875H4.375C4.72016 8.875 5 9.15484 5 9.5V10.125Z"
+                                  fill="black"
+                                />
+                              </svg>
+                            </span>
+                            <span>
+                              <svg
+                                width="20"
+                                height="13"
+                                viewBox="0 0 20 13"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M20 11.8694C20 12.2794 19.668 12.6113 19.258 12.6113H0.741769C0.332078 12.6113 0 12.2794 0 11.8694V0.741886C0 0.332195 0.332078 0 0.741769 0H19.2581C19.668 0 20 0.332195 20 0.741886L20 11.8694Z"
+                                  fill="#21246E"
+                                />
+                                <path
+                                  d="M7.60177 3.65172L5.37646 8.96181H3.924L2.82969 4.72452C2.76231 4.46318 2.70473 4.36812 2.50273 4.25716C2.17186 4.07824 1.62756 3.91041 1.14697 3.80589L1.18059 3.65176H3.51739C3.81543 3.65176 4.08336 3.85056 4.15075 4.19325L4.72936 7.26664L6.15856 3.65176L7.60177 3.65172ZM13.2911 7.22728C13.2975 5.82659 11.3529 5.75034 11.3669 5.1237C11.3707 4.93245 11.552 4.73002 11.949 4.67892C12.1462 4.65268 12.6887 4.63347 13.3037 4.91578L13.5447 3.79028C13.2139 3.67019 12.7886 3.55518 12.26 3.55518C10.9023 3.55518 9.94654 4.27731 9.9385 5.31055C9.92959 6.07465 10.6204 6.50101 11.1414 6.75548C11.6765 7.01588 11.8554 7.18211 11.8535 7.41561C11.85 7.77201 11.4266 7.92779 11.0317 7.93477C10.3409 7.94555 9.94025 7.74808 9.62028 7.59907L9.37159 8.76329C9.69207 8.91043 10.2855 9.03821 10.8996 9.04575C12.3425 9.04571 13.2865 8.33127 13.2911 7.22728ZM16.8763 8.96177H18.1471L17.0382 3.65168H15.8651C15.6015 3.65168 15.3793 3.80543 15.2803 4.04092L13.2203 8.96173H14.6621L14.9483 8.16871H16.7108L16.8763 8.96177ZM15.3435 7.08041L16.0668 5.08658L16.483 7.08041H15.3435ZM9.56484 3.65172L8.42829 8.96177H7.05438L8.1912 3.65168H9.56484V3.65172Z"
+                                  fill="white"
+                                />
+                              </svg>
+                            </span>
+                            <span>
+                                <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.13569 12.2714C9.52434 12.2714 12.2714 9.52434 12.2714 6.13569C12.2714 2.74704 9.52434 0 6.13569 0C2.74704 0 0 2.74704 0 6.13569C0 9.52434 2.74704 12.2714 6.13569 12.2714Z" fill="#FF6041"/>
+                                    <path d="M13.8642 12.2714C17.2529 12.2714 19.9999 9.52434 19.9999 6.13569C19.9999 2.74704 17.2529 0 13.8642 0C10.4756 0 7.72852 2.74704 7.72852 6.13569C7.72852 9.52434 10.4756 12.2714 13.8642 12.2714Z" fill="#FFD941"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.01 1.38843C11.3926 2.51232 12.2764 4.2256 12.2764 6.14595C12.2764 8.0663 11.3926 9.77958 10.01 10.9035C8.62743 9.77958 7.74365 8.0663 7.74365 6.14595C7.74365 4.2256 8.62743 2.51232 10.01 1.38843Z" fill="#FFD941"/>
+                                    <mask id="mask0_1493_24" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="7" y="1" width="6" height="10">
+                                    <path d="M10.01 1.38843C11.3926 2.51232 12.2764 4.2256 12.2764 6.14595C12.2764 8.0663 11.3926 9.77958 10.01 10.9035C8.62743 9.77958 7.74365 8.0663 7.74365 6.14595C7.74365 4.2256 8.62743 2.51232 10.01 1.38843Z" fill="white"/>
+                                    </mask>
+                                    <g mask="url(#mask0_1493_24)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.60791 2.59595H13.9235V3.39241H6.60791V2.59595Z" fill="#FF6041"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.60791 4.15967H13.9235V4.95613H6.60791V4.15967Z" fill="#FF6041"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.60791 5.75244H13.9235V6.5489H6.60791V5.75244Z" fill="#FF6041"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.60791 7.31567H13.9235V8.11213H6.60791V7.31567Z" fill="#FF6041"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.60791 8.87939H13.9235V9.67586H6.60791V8.87939Z" fill="#FF6041"/>
+                                    </g>
+                                    </svg>
+                                    
+                            </span>
+                          </div>
+                        </label>
+                      </div>
+                      <div
+                        class="radio-btn flex items-center p-3 border rounded-md"
+                      >
+                        <input
+                          type="radio"
+                          id="payment-paypal"
+                          name="payment-method"
+                          value="paypal"
+                          class="text-primary focus:ring-primary me-2"
+                        />
+                        <label
+                          for="payment-paypal"
+                          class="flex items-center w-full"
+                        >
+                          <span class="font-medium me-3">PayPal</span>
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16.7527 5.16719C16.7866 4.89199 16.8043 4.6118 16.8043 4.32746C16.8043 1.9375 14.8668 0 12.4768 0H5.24473C4.78981 0 4.40141 0.328516 4.32594 0.777109L1.6611 16.616C1.56547 17.1843 2.0036 17.7023 2.57989 17.7023H5.22485C5.67977 17.7023 6.07547 17.374 6.1509 16.9254C6.1509 16.9254 6.15532 16.8991 6.16329 16.8517H6.16332L5.79473 19.0426C5.71051 19.5435 6.09664 20 6.60457 20H8.91852C9.3195 20 9.66184 19.7104 9.72832 19.315L10.3857 15.408C10.499 14.7345 11.0821 14.2413 11.765 14.2413H12.3729C15.6749 14.2413 18.3516 11.5646 18.3516 8.26266C18.3516 6.98496 17.72 5.85555 16.7527 5.16719Z"
+                              fill="#002987"
+                            />
+                            <path
+                              d="M16.7528 5.16724C16.3389 8.5336 13.4698 11.1403 9.99158 11.1403H7.97342C7.51791 11.1403 7.12451 11.4437 7.00111 11.8727L5.79479 19.0425C5.71053 19.5435 6.09666 20 6.60459 20H8.91854C9.31951 20 9.66186 19.7105 9.72834 19.3151L10.3857 15.4081C10.499 14.7345 11.0821 14.2414 11.7651 14.2414H12.3729C15.6749 14.2414 18.3516 11.5646 18.3516 8.26271C18.3516 6.98501 17.7201 5.8556 16.7528 5.16724Z"
+                              fill="#0085CC"
+                            />
+                            <path
+                              d="M7.97381 11.1401H9.99197C13.4702 11.1401 16.3394 8.53344 16.7531 5.16711C16.1325 4.72547 15.3741 4.46484 14.5543 4.46484H9.28674C8.68701 4.46484 8.17494 4.89793 8.07541 5.48934L7.00146 11.8725C7.12486 11.4435 7.5183 11.1401 7.97381 11.1401Z"
+                              fill="#00186A"
+                            />
+                          </svg>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- Card Details (visible when card is selected) -->
+                    <div>
+                      <!-- Card Number -->
+                      <div class="mb-4">
+                        <label
+                          for="card-number"
+                          class="block mb-2 font-medium md:text-base text-sm"
+                          >Card Number
+                          <span class="text-red-500">*</span></label
+                        >
+                        <input
+                          type="text"
+                          id="card-number"
+                          placeholder="1234 5678 9012 3456"
+                          class="form-input"
+                        />
+                      </div>
+
+                      <div
+                        class="grid grid-cols-1 md:grid-cols-2 md:gap-4 gap-0"
+                      >
+                        <!-- Name on Card -->
+                        <div class="mb-4">
+                          <label
+                            for="card-name"
+                            class="block mb-2 font-medium md:text-base text-sm"
+                            >Name on Card
+                            <span class="text-red-500">*</span></label
+                          >
+                          <input
+                            type="text"
+                            id="card-name"
+                            class="form-input"
+                          />
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <!-- Expiry Date -->
+                          <div class="sm:mb-4 mb-0">
+                            <label
+                              for="card-expiry"
+                              class="block mb-2 font-medium md:text-base text-sm"
+                              >Expiry Date
+                              <span class="text-red-500">*</span></label
+                            >
+                            <input
+                              type="text"
+                              id="card-expiry"
+                              placeholder="MM/YY"
+                              class="form-input"
+                            />
+                          </div>
+
+                          <!-- CVV -->
+                          <div class="mb-4">
+                            <label
+                              for="card-cvv"
+                              class="block mb-2 font-medium md:text-base text-sm"
+                              >CVV <span class="text-red-500">*</span></label
+                            >
+                            <input
+                              type="text"
+                              id="card-cvv"
+                              placeholder="123"
+                              class="form-input"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Save Card -->
+                      <div>
+                        <div class="checkbox flex items-center">
+                          <input
+                            type="checkbox"
+                            id="save-card"
+                            class="rounded border-gray-300 text-primary focus:ring-primary me-2"
+                          />
+                          <label
+                            for="save-card"
+                            class="flex-1 font-medium text-sm md:text-base"
+                            >Save this card for future purchases</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Course Preferences -->
+                <div>
+                  <h2 class="font-semibold text-xl md:mb-4 mb-3">
+                    3. Course Preferences (Optional)
+                  </h2>
+                  <div class="border md:p-6 p-4 rounded-lg shadow-sm">
+                    <div>
+                      <label
+                        for="course-notes"
+                        class="block mb-2 font-medium md:text-base text-sm"
+                        >Any specific goals or preferences?</label
+                      >
+                      <textarea
+                        id="course-notes"
+                        rows="3"
+                        placeholder="Tell us about your yoga goals, experience level, or any specific areas you'd like to focus on..."
+                        class="form-input"
+                      ></textarea>
+                      <p class="text-sm text-gray-500 mt-1">
+                        This helps us personalize your learning experience
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Right Side - Order Summary -->
+            <div class="lg:w-1/3">
+              <div
+                class="border md:p-6 p-4 rounded-lg shadow-sm sticky top-[20px]"
+              >
+                <h2 class="font-bold text-xl mb-6">Order Summary</h2>
+
+                <!-- Order Items -->
+                <div class="space-y-4 mb-6">
+                  <div class="flex items-start gap-3 pb-3 border-b">
+                    <div
+                      class="h-20 w-20 flex-shrink-0 border bg-gray-100 rounded-lg overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/product-01.png"
+                        alt="Yoga for Beginners"
+                        class="h-full w-full object-cover"
+                      />
+                    </div>
+                    <div class="flex-grow">
+                      <h3 class="font-medium mb-1">Yoga for Beginners</h3>
+                      <p class="text-sm text-gray-500">
+                        12 Lessons • Sarah Johnson
+                      </p>
+                      <div class="flex items-center mt-1">
+                        <div class="flex text-yellow-400 text-sm">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500 ms-1">(4.9)</span>
+                      </div>
+                    </div>
+                    <div class="font-semibold text-right">
+                      <div class="text-primary">$49</div>
+                      <div class="text-sm text-gray-400 line-through">$99</div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3 pb-3 border-b">
+                    <div
+                      class="h-20 w-20 flex-shrink-0 border bg-gray-100 rounded-lg overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/product-02.png"
+                        alt="Vinyasa Flow Mastery"
+                        class="h-full w-full object-cover"
+                      />
+                    </div>
+                    <div class="flex-grow">
+                      <h3 class="font-medium mb-1">Vinyasa Flow Mastery</h3>
+                      <p class="text-sm text-gray-500">
+                        18 Lessons • Michael Chen
+                      </p>
+                      <div class="flex items-center mt-1">
+                        <div class="flex text-yellow-400 text-sm">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500 ms-1">(4.8)</span>
+                      </div>
+                    </div>
+                    <div class="font-semibold text-right">
+                      <div class="text-primary">$79</div>
+                      <div class="text-sm text-gray-400 line-through">$129</div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3 pb-3 border-b">
+                    <div
+                      class="h-20 w-20 flex-shrink-0 border bg-gray-100 rounded-lg overflow-hidden"
+                    >
+                      <img
+                        src="assets/images/product-03.png"
+                        alt="Yin Yoga Deep Stretch"
+                        class="h-full w-full object-cover"
+                      />
+                    </div>
+                    <div class="flex-grow">
+                      <h3 class="font-medium mb-1">Yin Yoga Deep Stretch</h3>
+                      <p class="text-sm text-gray-500">
+                        15 Lessons • Emma Wilson
+                      </p>
+                      <div class="flex items-center mt-1">
+                        <div class="flex text-yellow-400 text-sm">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500 ms-1">(4.7)</span>
+                      </div>
+                    </div>
+                    <div class="font-semibold text-right">
+                      <div class="text-primary">$59</div>
+                      <div class="text-sm text-gray-400 line-through">$89</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Coupon Code -->
+                <div class="pb-4 mb-4 border-b">
+                  <div class="flex">
+                    <input
+                      type="text"
+                      placeholder="Coupon code"
+                      class="p-2 form-input !rounded-tr-none !rounded-br-none"
+                    />
+                    <button
+                      class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-r-md transition"
+                    >
+                      Apply
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Order Totals -->
+                <div class="space-y-2 md:text-base text-sm md:mb-6 mb-4">
+                  <div class="flex justify-between">
+                    <span>Subtotal</span>
+                    <span class="font-semibold">$187</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Discount</span>
+                    <span class="font-semibold text-primary">-$50</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Tax</span>
+                    <span class="font-semibold">$0</span>
+                  </div>
+                  <div
+                    class="flex justify-between text-lg font-bold pt-2 border-t"
+                  >
+                    <span>Total</span>
+                    <span class="text-primary-dark">$137</span>
+                  </div>
+                </div>
+
+                <!-- Course Benefits -->
+                <div class="bg-primary/10 p-4 rounded-lg mb-6">
+                  <h3 class="font-semibold text-primary mb-2">
+                    What you'll get:
+                  </h3>
+                  <ul class="text-sm space-y-1">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary me-2"></i>
+                      Lifetime access to all courses
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary me-2"></i>
+                      Downloadable course materials
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary me-2"></i>
+                      Certificate of completion
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary me-2"></i>
+                      Access to our yoga community
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Terms -->
+                <div class="md:mb-6 mb-4">
+                  <div class="checkbox flex items-start">
+                    <input
+                      type="checkbox"
+                      id="terms"
+                      class="rounded border-gray-300 text-primary focus:ring-primary mt-1 me-2"
+                      required=""
+                    />
+                    <label for="terms" class="flex-1 text-sm">
+                      I agree to the
+                      <a
+                        href="terms-condition.html"
+                        class="text-primary hover:underline"
+                        >Terms &amp; Conditions</a
+                      >,
+                      <a
+                        href="privacy-policy.html"
+                        class="text-primary hover:underline"
+                        >Privacy Policy</a
+                      >
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Checkout Button -->
+                <a href="order-success.html" class="btn-primary w-full">
+                  Complete Purchase
+                </a>
+
+                <!-- Security Information -->
+                <div
+                  class="flex items-center justify-center mt-4 text-sm text-gray-500"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-4 w-4 me-2 flex-shrink-0"
+                  >
+                    <rect
+                      width="18"
+                      height="11"
+                      x="3"
+                      y="11"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  Secure checkout - Your data is protected
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-gray-900 text-white md:pt-12 pt-10">
+      <div class="container mx-auto px-4">
+        <!-- Main Footer Content -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:gap-8 gap-6 md:mb-8 mb-6"
+        >
+          <!-- Company Info -->
+          <div class="space-y-4">
+            <div class="footer-logo md:max-w-[150px] max-w-[110px] mb-4">
+              <img
+                src="assets/images/footer-logo.png"
+                alt="logo"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              Transform your life through the ancient practice of yoga. Join our
+              community and discover inner peace, strength, and mindfulness.
+            </p>
+          </div>
+          <!-- Quick Links -->
+          <div class="space-y-4">
+            <h3
+              class="md:text-lg text-[16px] font-semibold uppercase tracking-wider"
+            >
+              Quick Links
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="profile.html"
+                class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                <i class="fas fa-chevron-right text-xs me-2 text-white"></i>
+                Profile
+            </a>
+              </li>
+              <li>
+                <a
+                  href="product-list.html"
+                  class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300"
+                >
+                  <i class="fas fa-chevron-right text-xs me-2 text-white"></i>
+                  Courses
+                </a>
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300"
+                >
+                  <i class="fas fa-chevron-right text-xs me-2 text-white"></i>
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300"
+                >
+                  <i class="fas fa-chevron-right text-xs me-2 text-white"></i>
+                  About Us
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Services -->
+          <div class="space-y-4">
+            <h3
+              class="md:text-lg text-[16px] font-semibold uppercase tracking-wider"
+            >
+              Yoga Styles
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="javascript:"
+                  class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300"
+                >
+                  <i class="fas fa-seedling text-xs me-2 text-white"></i> Hatha
+                  Yoga
+                </a>
+              </li>
+              <li>
+                <a
+                  href="javascript:"
+                  class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300"
+                >
+                  <i class="fas fa-fire text-xs me-2 text-white"></i> Vinyasa
+                  Flow
+                </a>
+              </li>
+              <li>
+                <a
+                  href="javascript:"
+                  class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300"
+                >
+                  <i class="fas fa-om text-xs me-2 text-white"></i> Meditation
+                </a>
+              </li>
+              <li>
+                <a
+                  href="javascript:"
+                  class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300"
+                >
+                  <i class="fas fa-leaf text-xs me-2 text-white"></i> Yin Yoga
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Contact Info -->
+          <div class="space-y-4">
+            <h3
+              class="md:text-lg text-[16px] font-semibold uppercase tracking-wider"
+            >
+              Contact Us
+            </h3>
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <i class="fas fa-map-marker-alt text-white mt-1 me-3"></i>
+                <p class="text-gray-400">
+                  123 Wellness Street, Peace City, PC 12345
+                </p>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-phone text-white me-3"></i>
+                <a
+                  href="tel:+1 (555) 123-4567"
+                  tabindex="0"
+                  class="text-gray-400"
+                >
+                  +1 (555) 123-4567
+                </a>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-envelope text-white me-3"></i>
+                <a href="mailto:hello@yogabliss.com" class="text-gray-400"
+                  >hello@yogabliss.com</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Divider -->
+        <div class="footer-divider my-6"></div>
+        <!-- Bottom Footer -->
+        <div
+          class="border-t lg:py-6 py-4 flex sm:flex-row flex-col justify-between"
+        >
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 Yoga Bliss. All Rights Reserved.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="javascript:"
+              class="social-icon text-gray-400 hover:text-white sm:text-xl text-lg transition-all duration-300"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="javascript:"
+              class="social-icon text-gray-400 hover:text-white sm:text-xl text-lg transition-all duration-300"
+            >
+              <i class="fab fa-x-twitter"></i>
+            </a>
+            <a
+              href="javascript:"
+              class="social-icon text-gray-400 hover:text-white sm:text-xl text-lg transition-all duration-300"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="javascript:"
+              class="social-icon text-gray-400 hover:text-white sm:text-xl text-lg transition-all duration-300"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Back to Top Button -->
+      <button
+        id="backToTop"
+        class="fixed bottom-6 end-6 bg-purple-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300"
+      >
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </footer>
+    <div
+      id="mobile-menu"
+      class="mobile-menu fixed inset-y-0 end-0 z-[100] bg-white shadow-xl transform translate-x-full transition-transform duration-300 max-w-[325px] w-full ease-in-out overflow-y-auto"
+    >
+      <div class="flex justify-between items-center p-4 border-b">
+        <a href="index.html" class="block max-w-[110px] w-full">
+          <img src="assets/images/logo.png" alt="logo" class="logo-img" />
+        </a>
+        <button
+          id="close-mobile-menu"
+          class="text-gray-600 hover:text-primary transition-colors"
+        >
+          <i class="fas fa-times text-xl"></i>
+        </button>
+      </div>
+
+      <nav class="p-4">
+        <ul class="space-y-1">
+          <li>
+            <div
+              class="mobile-dropdown-toggle block py-3 px-4 rounded-lg font-medium bg-primary/10 text-primary hover:bg-gray-100 cursor-pointer flex justify-between items-center transition-colors"
+            >
+              <div><i class="fas fa-graduation-cap me-3"></i>Courses</div>
+              <i
+                class="fas fa-chevron-down text-xs transition-transform duration-200"
+              ></i>
+            </div>
+            <div class="mobile-dropdown-content capitalize mt-1">
+              <a
+                href="product-list.html"
+                class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors"
+              >
+                <i class="fas fa-list me-3 text-primary w-4 text-center"></i>
+                All Courses
+              </a>
+              <a
+                href="product-list.html?level=beginner"
+                class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors"
+              >
+                <i
+                  class="fas fa-seedling me-3 text-primary w-4 text-center"
+                ></i>
+                Beginner
+              </a>
+              <a
+                href="product-list.html?level=intermediate"
+                class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors"
+              >
+                <i class="fas fa-fire me-3 text-primary w-4 text-center"></i>
+                Intermediate
+              </a>
+              <a
+                href="product-list.html?level=advanced"
+                class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors"
+              >
+                <i class="fas fa-star me-3 text-primary w-4 text-center"></i>
+                Advanced
+              </a>
+              <a
+                href="meditation.html"
+                class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors"
+              >
+                <i class="fas fa-om me-3 text-primary w-4 text-center"></i>
+                Meditation
+              </a>
+            </div>
+          </li>
+          <li>
+            <a
+              href="instructors.html"
+              class="block py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-100 transition-colors"
+            >
+              <i class="fas fa-user-graduate me-3"></i>Instructors
+            </a>
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="block py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-100 transition-colors"
+            >
+              <i class="fas fa-info-circle me-3"></i>About
+            </a>
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="block py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-100 transition-colors"
+            >
+              <i class="fas fa-envelope me-3"></i>Contact
+            </a>
+          </li>
+          <li>
+            <a
+              href="blog.html"
+              class="block py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-100 transition-colors"
+            >
+              <i class="fas fa-newspaper me-3"></i>Blog
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div id="searchPopup" class="search-popup">
+      <div
+        class="bg-white rounded-lg md:p-8 p-4 w-full max-w-2xl mx-4 shadow-lg"
+      >
+        <div class="flex items-center justify-between md:mb-6 mb-4">
+          <h3 class="md:text-2xl text-xl font-bold text-secondary">
+            Search Yoga Courses
+          </h3>
+          <button
+            onclick="closeSearchPopup()"
+            class="text-gray-500 hover:text-gray-700 text-xl"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="relative mb-6">
+          <input
+            type="text"
+            placeholder="What yoga practice ?"
+            class="w-full ps-12 pe-4 py-2 text-base border-2 primary-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+          <i
+            class="fas fa-search absolute start-5 top-2.5 text-gray-800 text-lg"
+          ></i>
+        </div>
+        <div>
+          <p class="text-sm text-gray-800 mb-3 font-medium">
+            Popular searches:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors"
+              >Hatha Yoga</span
+            >
+            <span
+              class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors"
+              >Vinyasa Flow</span
+            >
+            <span
+              class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors"
+              >Meditation</span
+            >
+            <span
+              class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors"
+              >Restorative</span
+            >
+            <span
+              class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors"
+              >Yin Yoga</span
+            >
+
+            <span
+              class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors"
+              >Power Yoga</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

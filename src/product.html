@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="author" content="yoga-bliss" />
+    <meta name="description" content="yoga-bliss" />
+    <meta name="keywords" content="yoga-bliss" />
+    <link rel="icon" href="assets/images/favicon.png" />
+    <title>yoga-bliss</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="swiper-bundle.min.css" />
+    <link rel="stylesheet" href="tailwind.css" />
+</head>
+<body>
+    <div class="overlay"></div> 
+
+    <header id="mainHeader"
+    class="sticky top-0  w-full z-50 bg-white text-gray-900 transition-all duration-300 ease-in-out">
+  
+        <div class="md:container w-full mx-auto px-4">
+            <div class="flex items-center justify-between py-3">
+                <h1 class="logo">
+                    <a href="index.html" class="block md:max-w-[150px] max-w-[110px] w-full">
+                        <img src="assets/images/logo.png" alt="logo" class="logo-img" />
+                    </a>
+                </h1>
+                <nav class="hidden lg:block">
+                    <ul class="flex items-center gap-5 font-medium">
+                        <li>
+                            <div class="relative" id="coursesDropdown">
+                                <button
+                                    class="flex items-center  transition-colors capitalize"
+                                    onclick="toggleDropdown('coursesMenu', this)">
+                                    Courses
+                                    <i class="fas fa-chevron-down ms-1.5 text-xs"></i>
+                                </button>
+                                <div id="coursesMenu"
+                                    class="hidden absolute start-0 mt-2 w-fit dropdown-menu bg-white shadow-md rounded-md z-10">
+                                    <div class="flex gap-2 justify-between text-nowrap capitalize">
+                                        <ul>
+                                            <li>
+                                                <a href="product-list.html"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300">All
+                                                    Courses</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?level=beginner"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300">Beginner</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?level=intermediate"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300">Intermediate</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?level=advanced"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300">Advanced</a>
+                                            </li>
+                                            <li>
+                                                <a href="meditation.html"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300">Meditation</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <a href="product-list.html?style=hatha"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors">Hatha
+                                                    Yoga</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?style=vinyasa"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors">Vinyasa
+                                                    Flow</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?style=yin"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors">Yin
+                                                    Yoga</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?style=power"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors">Power
+                                                    Yoga</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?style=restorative"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors">Restorative</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="instructors.html"
+                                class="rounded-lg text-gray-900 transition-all duration-300">Instructors</a>
+                        </li>
+                        <li>
+                            <a href="about.html"
+                                class="rounded-lg text-gray-900 transition-all duration-300">About</a>
+                        </li>
+                       
+                        <li>
+                            <a href="contact.html"
+                                class="rounded-lg text-gray-900 transition-all duration-300">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <!-- Search Button for Mobile -->
+                    <button onclick="openSearchPopup()" class="lg:hidden">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <!-- Search Bar for Desktop -->
+                    <div
+                        class="hidden lg:flex items-center bg-transparent px-4 py-2.5 input-search border border-gray-200 rounded-lg">
+                       <i class="fas fa-search text-gray-900 me-3"></i>
+                        <input type="text" placeholder="Search courses, instructors..."
+                            class="bg-transparent outline-none text-sm w-32 lg:w-48 text-gray-900 placeholder-gray-900" />
+                    </div>
+                    <!-- Wishlist Button -->
+                    <div class="relative">
+                        <a href="wishlist.html" class="flex items-center justify-center pe-1.5">
+                            <i class="fas fa-heart text-xl text-gray-900"></i>
+                            <span
+                                class="absolute -top-1.5 -end-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold shadow-lg">0</span>
+                        </a>
+                    </div>
+                    <!-- Cart Button -->
+                    <div class="relative">
+                        <a href="cart.html" class="flex items-center justify-center pe-1.5">
+                            <i class="fas fa-shopping-cart text-xl text-gray-900"></i>
+                            <span
+                                class="absolute -top-1.5 -end-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold shadow-lg">0</span>
+                        </a>
+                    </div>
+                    <!-- Login Button -->
+                    <a href="login.html" class="btn-primary login-btn">
+                        <i class="fas fa-user"></i>
+                        <span class="hidden lg:block"> Login</span>
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden" id="mobile-menu-toggle">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Search Popup -->
+            <div id="search-popup"
+                class="lg:hidden absolute top-full start-0 end-0 bg-white border-t border-slate-200 shadow-lg transform -translate-y-full opacity-0 invisible transition-all duration-300">
+                <div class="md:container w-full mx-auto px-4 py-4">
+                    <div class="flex items-center bg-slate-50 border border-slate-200 rounded-lg px-4 py-1">
+                        <i class="fas fa-search me-3"></i>
+                        <input type="text" placeholder="Search courses, instructors..."
+                            class="bg-transparent outline-none text-sm flex-1 text-slate-700 placeholder-slate-400"
+                            autofocus />
+                        <button id="search-close" class="ms-2 p-1 hover:bg-slate-200 rounded">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+    <!-- Common Banner Section -->
+    <section class="relative  bg-[url('assets/images/common-banner-bg.png')] bg-cover md:bg-left bg-center lg:py-20 py-10">
+      <div class="md:container w-full mx-auto px-4">
+      <div class="relative z-[2] text-center text-white max-w-2xl mx-auto px-4 flex flex-col items-center justify-center">
+        <h2 class="text-3xl md:text-5xl font-elsie font-bold mb-3">product Details</h2>
+        <nav class="text-sm flex justify-center gap-2 capitalize">
+          <a href="index.html" class="hover:underline">Home</a>
+          <span>/</span>
+          <a href="product.html" class="hover:underline">product</a>
+        </nav>
+      </div>
+    </div>
+    </section>
+
+    <!-- HERO PRODUCT BANNER -->
+    <section class=" py-10 lg:py-20 bg-white">
+      <div class="md:container w-full mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:gap-12 gap-6 items-center">
+          <!-- Left: Product Image/Video -->
+          <div class="relative flex justify-center items-center h-full">
+            <div class="bg-white rounded-lg p-2 md:p-6 w-full flex items-center justify-center border border-primary/10 h-full">
+              <video id="yogaVideo" class="w-full h-[260px] md:h-full rounded-lg object-cover" poster="assets/images/yoga-style01.png" preload="metadata">
+                <source src="assets/images/yoga-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <button id="playButton" class="absolute inset-0 flex items-center justify-center bg-black/20  transition-all rounded-lg">
+                <div class="w-14 h-14 bg-white bg-opacity-90 rounded-full flex items-center justify-center hover:bg-opacity-100 transition-all">
+                  <i class="fas fa-play text-primary text-2xl"></i>
+                </div>
+              </button>
+            </div>
+          </div>
+          <!-- Right: Product Info -->
+          <div>
+            <div class="mb-4 flex items-center gap-3">
+              <span class="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold shadow-sm">
+                <i class="fas fa-leaf"></i> Beginner
+              </span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-elsie text-primary mb-4 leading-tight">Yoga for Beginners</h2>
+            <p class="lg:text-xl text-gray-700 xl:mb-8 mb-4 max-w-2xl">Perfect introduction to yoga fundamentals and basic poses. Learn proper alignment, breathing techniques, and build a strong foundation for your yoga practice.</p>
+            <div class="flex flex-wrap items-center lg:gap-6 gap-4 xl:mb-8 mb-4">
+              <div class="flex items-center text-yellow-500 text-lg font-semibold">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="ms-2 text-gray-600 font-normal">4.9 (124 reviews)</span>
+              </div>
+              <div class="flex items-center text-gray-600">
+                <i class="fas fa-users me-2"></i>
+                <span>1,234 students</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center lg:gap-6 gap-4 xl:mb-8 mb-4">
+              <div class="flex items-center text-gray-600">
+                <i class="fas fa-play-circle me-2"></i>
+                <span>12 lessons</span>
+              </div>
+              <div class="flex items-center text-gray-600">
+                <i class="fas fa-clock me-2"></i>
+                <span>8 hours total</span>
+              </div>
+              <div class="flex items-center text-gray-600">
+                <i class="fas fa-certificate me-2"></i>
+                <span>Certificate included</span>
+              </div>
+            </div>
+            <!-- Price Card & CTA -->
+            <div class="bg-primary/10 rounded-lg  flex-wrap shadow-lg p-4 xl:p-6 flex flex-col sm:flex-row items-center gap-4 sm:w-fit w-full border border-primary/20">
+              <div class="flex items-center sm:gap-4 gap-2">
+                <span class="text-3xl sm:text-4xl font-bold text-primary">$49</span>
+                <span class="text-xl text-gray-400 line-through">$79</span>
+                <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded font-semibold ms-2 sm:ms-0">38% OFF</span>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3  w-full sm:w-auto">
+                <button class="add-to-cart btn-primary w-full sm:w-auto" data-course-id="1" data-course-name="Yoga for Beginners" data-course-price="49" data-course-image="assets/images/yoga-style01.png">
+                  <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+                <button class="add-to-wishlist btn-secondary w-full sm:w-auto" data-course-id="1" data-course-name="Yoga for Beginners" data-course-price="49" data-course-image="assets/images/yoga-style01.png">
+                  <i class="fas fa-heart"></i> Wishlist
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content & Sidebar -->
+    <section class="py-10 lg:py-20">
+      <div class="md:container w-full mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 xl:gap-10 gap-5">
+          <!-- Main Content -->
+          <div class="lg:col-span-2">
+            <!-- Tabs -->
+            <div class=" bg-white rounded-lg border border-gray-200 p-4">
+              <div class="w-full overflow-x-auto mb-4">
+                <div class="flex gap-3 min-w-fit  px-1 pb-2 sm:pb-0">
+                  <button class="tab-button active border-b-2 text-gray-500 hover:text-primary bg-white font-semibold rounded-t-xl pb-2 transition-all duration-300" data-tab="overview" style="z-index:2;">Overview</button>
+                  <button class="tab-button border-b-2 border-transparent text-gray-500 hover:text-primary pb-2 font-semibold rounded-t-xl transition-all duration-300" data-tab="curriculum" style="z-index:2;">Curriculum</button>
+                  <button class="tab-button border-b-2 border-transparent text-gray-500 hover:text-primary pb-2 font-semibold rounded-t-xl transition-all duration-300" data-tab="instructor" style="z-index:2;">Instructor</button>
+                  <button class="tab-button border-b-2 border-transparent text-gray-500 hover:text-primary pb-2 font-semibold rounded-t-xl transition-all duration-300" data-tab="reviews" style="z-index:2;">Reviews</button>
+                </div>
+              </div>
+              
+            <!-- Tab Content -->
+              <div id="overview" class="tab-content fade-in w-full">
+                <div class="bg-white border border-gray-200 p-4 rounded-lg mb-8">
+                  <h2 class="text-xl sm:text-3xl font-bold text-gray-900 mb-4">Course Overview</h2>
+                  <p class="md:text-lg text-gray-600 leading-relaxed">
+                    This comprehensive beginner's yoga course is designed to introduce you to the fundamental principles and practices of yoga. Whether you're completely new to yoga or looking to strengthen your foundation, this course provides a safe and supportive environment to begin your journey.
+                  </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:gap-8 gap-5 lg:mb-8 mb-5">
+                  <div class="bg-white p-4 rounded-lg border border-gray-200">
+                    
+                    <h3 class="md:text-2xl text-xl font-bold text-gray-900 mb-4">What You'll Learn</h3>
+                    <ul class="space-y-3 text-gray-600 text-sm md:text-base">
+                      <li class="flex items-start"><i class="fas fa-check-circle text-green-500 me-3 mt-1"></i><span>Basic yoga poses (asanas) and proper alignment</span></li>
+                      <li class="flex items-start"><i class="fas fa-check-circle text-green-500 me-3 mt-1"></i><span>Fundamental breathing techniques (pranayama)</span></li>
+                      <li class="flex items-start"><i class="fas fa-check-circle text-green-500 me-3 mt-1"></i><span>How to create a safe home practice</span></li>
+                      <li class="flex items-start"><i class="fas fa-check-circle text-green-500 me-3 mt-1"></i><span>Introduction to meditation and mindfulness</span></li>
+                      <li class="flex items-start"><i class="fas fa-check-circle text-green-500 me-3 mt-1"></i><span>Understanding yoga philosophy and its benefits</span></li>
+                      <li class="flex items-start"><i class="fas fa-check-circle text-green-500 me-3 mt-1"></i><span>Building strength, flexibility, and balance</span></li>
+                    </ul>
+                  </div>
+                  <div class="bg-white p-4 rounded-lg border border-gray-200">
+                   
+                    <h3 class="md:text-2xl text-xl font-bold text-gray-900 mb-4">Requirements</h3>
+                    <ul class="space-y-3 text-gray-600 text-sm md:text-base">
+                      <li class="flex items-start"><i class="fas fa-star text-yellow-500 me-3 mt-1"></i><span>No prior yoga experience required</span></li>
+                      <li class="flex items-start"><i class="fas fa-star text-yellow-500 me-3 mt-1"></i><span>Yoga mat (alternatives provided if needed)</span></li>
+                      <li class="flex items-start"><i class="fas fa-star text-yellow-500 me-3 mt-1"></i><span>Comfortable clothing that allows movement</span></li>
+                      <li class="flex items-start"><i class="fas fa-star text-yellow-500 me-3 mt-1"></i><span>Open mind and willingness to learn</span></li>
+                      <li class="flex items-start"><i class="fas fa-star text-yellow-500 me-3 mt-1"></i><span>supportive environment to begin</span></li>
+                      <li class="flex items-start"><i class="fas fa-star text-yellow-500 me-3 mt-1"></i><span>introduce you to the fundamental</span></li>
+
+                    </ul>
+                  </div>
+                </div>
+                <!-- Benefits Section -->
+                <div class="bg-primary/10 text-black p-8 rounded-lg shadow">
+                  <h3 class="text-xl md:text-2xl font-bold md:mb-6 mb-4 text-center">Transform Your Life in Just 30 Days</h3>
+                  <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                      <div class="md:w-16 md:h-16 h-12 w-12 bg-primary bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-2xl text-white"></i>
+                      </div>
+                      <h4 class="font-bold mb-2">Reduce Stress</h4>
+                      <p class="text-sm opacity-90">Lower cortisol levels and find inner peace</p>
+                    </div>
+                    <div class="text-center">
+                      <div class="md:w-16 md:h-16 h-12 w-12 bg-primary bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dumbbell text-2xl text-white"></i>
+                      </div>
+                      <h4 class="font-bold mb-2">Build Strength</h4>
+                      <p class="text-sm opacity-90">Develop core stability and muscle tone</p>
+                    </div>
+                    <div class="text-center">
+                      <div class="md:w-16 md:h-16 h-12 w-12 bg-primary bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-2xl text-white"></i>
+                      </div>
+                      <h4 class="font-bold mb-2">Improve Flexibility</h4>
+                      <p class="text-sm opacity-90">Increase range of motion and mobility</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="curriculum" class="tab-content hidden fade-in w-full">
+                <h2 class="md:text-2xl text-xl font-bold text-gray-900 md:mb-6 mb-4">Course Curriculum</h2>
+                <div class="space-y-4">
+                  <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button gap-2 w-full text-left p-4 bg-gray-50  font-semibold flex items-center justify-between focus:outline-none active" data-accordion="module1">
+                      <span class="flex-1">Module 1: Getting Started (3 lessons)</span>
+                      <svg class="w-5 h-5 transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="accordion-content md:text-base text-sm p-4 space-y-3 border-t border-gray-200" id="module1">
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">1. Welcome & Introduction</span>
+                        <span class="text-sm text-gray-500 ms-2">5 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">2. Setting Up Your Practice Space</span>
+                        <span class="text-sm text-gray-500 ms-2">8 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">3. Basic Breathing Techniques</span>
+                        <span class="text-sm text-gray-500 ms-2">12 min</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button gap-2 w-full text-left p-4 bg-gray-50  font-semibold flex items-center justify-between focus:outline-none" data-accordion="module2">
+                      <span class="flex-1">Module 2: Foundation Poses (4 lessons)</span>
+                      <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="accordion-content md:text-base text-sm p-4 space-y-3 hidden border-t border-gray-200" id="module2">
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">4. Mountain Pose & Standing Alignment</span>
+                        <span class="text-sm text-gray-500 ms-2">15 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">5. Forward Folds & Hip Hinges</span>
+                        <span class="text-sm text-gray-500 ms-2">18 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">6. Warrior Poses</span>
+                        <span class="text-sm text-gray-500 ms-2">20 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">7. Downward Dog & Plank</span>
+                        <span class="text-sm text-gray-500 ms-2">16 min</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button gap-2 w-full text-left p-4 bg-gray-50 font-semibold flex items-center justify-between focus:outline-none" data-accordion="module3">
+                      <span class="flex-1">Module 3: Flow & Integration (5 lessons)</span>
+                      <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="accordion-content md:text-base text-sm p-4 space-y-3 hidden border-t border-gray-200" id="module3">
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">8. Sun Salutation A</span>
+                        <span class="text-sm text-gray-500 ms-2">25 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">9. Seated Poses & Twists</span>
+                        <span class="text-sm text-gray-500 ms-2">22 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">10. Backbends & Heart Opening</span>
+                        <span class="text-sm text-gray-500 ms-2">18 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">11. Relaxation & Meditation</span>
+                        <span class="text-sm text-gray-500 ms-2">20 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">12. Complete Beginner Flow</span>
+                        <span class="text-sm text-gray-500 ms-2">30 min</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button gap-2 w-full text-left p-4 bg-gray-50 font-semibold flex items-center justify-between focus:outline-none" data-accordion="module4">
+                      <span class="flex-1">Module 4: Advanced Fundamentals (4 lessons)</span>
+                      <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="accordion-content md:text-base text-sm p-4 space-y-3 hidden border-t border-gray-200" id="module4">
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">13. Balance Poses & Core Work</span>
+                        <span class="text-sm text-gray-500 ms-2">28 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">14. Hip Opening & Flexibility</span>
+                        <span class="text-sm text-gray-500 ms-2">32 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">15. Sun Salutation B</span>
+                        <span class="text-sm text-gray-500 ms-2">35 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">16. Building Your Home Practice</span>
+                        <span class="text-sm text-gray-500 ms-2">40 min</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-button gap-2 w-full text-left p-4 bg-gray-50 font-semibold flex items-center justify-between focus:outline-none" data-accordion="module5">
+                      <span class="flex-1">Module 5: Mindfulness & Philosophy (3 lessons)</span>
+                      <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="accordion-content md:text-base text-sm p-4 space-y-3 hidden border-t border-gray-200" id="module5">
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">17. Introduction to Yoga Philosophy</span>
+                        <span class="text-sm text-gray-500 ms-2">45 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">18. Meditation Techniques</span>
+                        <span class="text-sm text-gray-500 ms-2">38 min</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-gray-700">19. Living Yoga Off the Mat</span>
+                        <span class="text-sm text-gray-500 ms-2">42 min</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="instructor" class="tab-content hidden fade-in w-full">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 md:mb-6 mb-4 sm:text-start text-center">Meet Your Instructor</h2>
+                <div class="flex items-start lg:gap-6 gap-5 flex-wrap sm:flex-row flex-col sm:text-start text-center">
+                  <img src="assets/images/testimonial-01.jpg" alt="Sarah Johnson" class="w-24 h-24 rounded-full object-cover sm:m-0 mx-auto">
+                  <div class="flex-1">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Sarah Johnson</h3>
+                    <p class="text-primary font-medium mb-4">Certified Yoga Instructor (RYT-500)</p>
+                    <p class="text-gray-600 mb-4">
+                      Sarah has been practicing yoga for over 15 years and teaching for 8 years. She specializes in Hatha and Vinyasa yoga and is passionate about making yoga accessible to everyone, regardless of their experience level or physical abilities.
+                    </p>
+                    <ul class="mb-4 text-gray-700 list-disc list-inside">
+                      <li><span class="font-semibold">Specialties:</span> Hatha Yoga, Vinyasa Flow, Mindfulness Meditation, Pranayama, Yoga for Beginners, Restorative Yoga</li>
+                      <li><span class="font-semibold">Philosophy:</span> "Yoga is for every body. My mission is to empower students to find balance, strength, and peace both on and off the mat."</li>
+                    </ul>
+                    <blockquote class="italic text-primary border-l-4 border-primary ps-4 mb-4">"Yoga is not about touching your toes, it's about what you learn on the way down."</blockquote>
+                    <div class="flex items-center sm:justify-start justify-center sm:gap-6 gap-4 text-sm text-gray-600">
+                      <span><i class="fas fa-users me-1"></i> 5,000+ students</span>
+                      <span><i class="fas fa-star me-1"></i> 4.9 rating</span>
+                      <span><i class="fas fa-play-circle me-1"></i> 25 courses</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="reviews" class="tab-content hidden fade-in w-full">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                  <h2 class="md:text-2xl text-xl font-bold text-gray-900">Student Reviews</h2>
+                  <button id="addReviewBtn" class="btn-primary" type="button">
+                    <i class="fas fa-plus"></i>
+                    Add Review
+                  </button>
+                </div>
+                <div class="space-y-6">
+                  <div class="border-b border-gray-200 pb-6">
+                    <div class="flex items-start gap-4">
+                      <img src="assets/images/user01.png" alt="Student" class="w-12 h-12 rounded-full object-cover">
+                      <div class="flex-1">
+                        <div class="flex items-center justify-between mb-2">
+                          <h4 class="font-semibold">Emma Wilson</h4>
+                          <div class="flex items-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                          </div>
+                        </div>
+                        <p class="text-gray-600 line-clamp-3">
+                          "Perfect course for beginners! Sarah explains everything clearly and the progression is just right. I feel so much more confident in my practice now."
+                        </p>
+                        <p class="text-sm text-gray-500 mt-2">2 weeks ago</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="border-b border-gray-200 pb-6">
+                    <div class="flex items-start gap-4">
+                      <img src="assets/images/user02.png" alt="Student" class="w-12 h-12 rounded-full object-cover">
+                      <div class="flex-1">
+                        <div class="flex items-center justify-between mb-2">
+                          <h4 class="font-semibold">Michael Chen</h4>
+                          <div class="flex items-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                          </div>
+                        </div>
+                        <p class="text-gray-600 line-clamp-3">
+                          "As someone who was intimidated by yoga, this course made it approachable and enjoyable. The modifications for different abilities are really helpful."
+                        </p>
+                        <p class="text-sm text-gray-500 mt-2">1 month ago</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="border-b border-gray-200 pb-6">
+                    <div class="flex items-start gap-4">
+                      <img src="assets/images/user03.png" alt="Student" class="w-12 h-12 rounded-full object-cover">
+                      <div class="flex-1">
+                        <div class="flex items-center justify-between mb-2">
+                          <h4 class="font-semibold">Sarah Johnson</h4>
+                          <div class="flex items-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                          </div>
+                        </div>
+                        <p class="text-gray-600 line-clamp-3">
+                          "I've been practicing yoga for years but wanted to go back to basics. This course is perfect for refining technique and building a solid foundation."
+                        </p>
+                        <p class="text-sm text-gray-500 mt-2">3 weeks ago</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex items-start gap-4">
+                      <img src="assets/images/user04.png" alt="Student" class="w-12 h-12 rounded-full object-cover">
+                      <div class="flex-1">
+                        <div class="flex items-center justify-between mb-2">
+                          <h4 class="font-semibold">David Kumar</h4>
+                          <div class="flex items-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                          </div>
+                        </div>
+                        <p class="text-gray-600 line-clamp-3">
+                          "Great course structure and Sarah is an excellent instructor. The breathing techniques section was particularly helpful for my stress management."
+                        </p>
+                        <p class="text-sm text-gray-500 mt-2">1 week ago</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Sidebar -->
+          <div class="space-y-8 md:sticky top-32">
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+              <div class="text-center mb-6">
+                <div class="md:w-16 md:h-16 h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-info-circle text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-primary">Course Details</h3>
+              </div>
+              <div class="space-y-4">
+                <div class="flex items-center justify-between p-3 bg-secondary rounded-lg">
+                  <div class="flex items-center">
+                    <i class="fas fa-signal text-green-500 me-3"></i>
+                    <span class="text-gray-600">Level</span>
+                  </div>
+                  <span class="font-bold text-green-600">Beginner</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-secondary rounded-lg">
+                  <div class="flex items-center">
+                    <i class="fas fa-clock text-blue-500 me-3"></i>
+                    <span class="text-gray-600">Duration</span>
+                  </div>
+                  <span class="font-bold text-blue-600">8 hours</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-secondary rounded-lg">
+                  <div class="flex items-center">
+                    <i class="fas fa-play-circle text-primary me-3"></i>
+                    <span class="text-gray-600">Lessons</span>
+                  </div>
+                  <span class="font-bold text-primary">12</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-secondary rounded-lg">
+                  <div class="flex items-center">
+                    <i class="fas fa-globe text-indigo-500 me-3"></i>
+                    <span class="text-gray-600">Language</span>
+                  </div>
+                  <span class="font-bold text-indigo-600">English</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-secondary rounded-lg">
+                  <div class="flex items-center">
+                    <i class="fas fa-infinity text-pink-500 me-3"></i>
+                    <span class="text-gray-600">Access</span>
+                  </div>
+                  <span class="font-bold text-pink-600">Lifetime</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-secondary rounded-lg">
+                  <div class="flex items-center">
+                    <i class="fas fa-certificate text-orange-500 me-3"></i>
+                    <span class="text-gray-600">Certificate</span>
+                  </div>
+                  <span class="font-bold text-orange-600">Included</span>
+                </div>
+              </div>
+              <div class="lg:mt-8 mt-5 p-4 bg-primary/10 rounded-lg">
+                <div class="text-center">
+                  <p class="text-sm text-gray-600 mb-2">30-Day Money Back</p>
+                  <p class="font-bold text-primary">100% Guarantee</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Courses -->
+    <section class="py-10 lg:py-20 bg-tertiary">
+      <div class="md:container w-full mx-auto px-4">
+        <div class="text-center mb-10">
+          <span class="inline-block bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold mb-6 shadow-sm">
+            <i class="fas fa-spa me-2"></i>Recommended for You
+          </span>
+          <h2 class="text-3xl md:text-4xl font-elsie text-primary mb-2">Explore More Courses</h2>
+        </div>
+        <div class="swiper product-swiper relative">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div
+                        class="product-card group flex flex-col bg-white rounded-lg border border-gray-200 overflow-hidden h-full">
+                        <!-- Image Section with Link -->
+                        <a href="product.html" class="relative block overflow-hidden product-img">
+                            <img src="assets/images/product-01.png"
+                                alt="Yoga for Beginners"
+                                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent">
+                            </div>
+                            <!-- Rating Badge -->
+                            <div
+                                class="absolute bottom-3 end-3 bg-white/90 px-2 py-1 rounded-full text-yellow-500 text-sm flex items-center gap-1">
+                                <i class="fas fa-star"></i><span class="text-gray-800 font-semibold">4.9</span>
+                            </div>
+                        </a>
+
+                        <!-- Content -->
+                        <div class="flex flex-col flex-1 p-4">
+                            <div class="flex justify-between text-xs text-gray-500 mb-2">
+                                <span>12 Lessons</span>
+                                <span>2.5 hours</span>
+                            </div>
+
+                            <!-- Title -->
+                            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-1 hover:text-primary transition">
+                                <a href="product.html">Yoga for Beginners</a>
+                            </h3>
+
+                            <!-- Description (clamped) -->
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                                Perfect introduction to yoga fundamentals and basic poses. Build strength,
+                                flexibility, and mindfulness.
+                            </p>
+
+                            <!-- Instructor -->
+                            <div class="flex items-center mb-4">
+                                <img src="assets/images/user01.png"
+                                    class="w-7 h-7 rounded-full me-2 object-cover" alt="Instructor" />
+                                <div class="text-sm">
+                                    <p class="font-medium text-gray-900 leading-tight mb-1">Sarah Johnson</p>
+                                    <p class="text-xs text-gray-500">RYT 500 Certified</p>
+                                </div>
+                            </div>
+
+                            <!-- Price and CTA -->
+                            <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-200">
+                                <div class="text-lg font-bold text-primary flex items-center gap-1.5">
+                                    $49
+                                    <span class="text-sm text-gray-400 line-through">$99</span>
+                                </div>
+
+                                <!-- Buttons: Cart + Wishlist -->
+                                <div class="flex items-center gap-2">
+                                    <button class="add-to-cart btn-primary !px-3 !py-2 !text-sm"
+                                        onclick="event.stopPropagation()" data-course-id="1"
+                                        data-course-name="Yoga for Beginners" data-course-price="49"
+                                        data-course-image="https://images.unsplash.com/photo-1506629905607-d5b4671b4b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80">
+                                        <i class="fas fa-cart-plus"></i> Add
+                                    </button>
+                                    <button class="add-to-wishlist p-1 h-10 w-10 btn-secondary"
+                                        onclick="event.stopPropagation()" data-course-id="1"
+                                        aria-label="Add to wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div
+                        class="product-card group flex flex-col bg-white rounded-lg border border-gray-200 overflow-hidden h-full">
+                        <!-- Image Section with Link -->
+                        <a href="product.html" class="relative block overflow-hidden product-img">
+                            <img src="assets/images/product-03.png"
+                                alt="Mindful Meditation"
+                                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent">
+                            </div>
+                            <!-- Rating Badge -->
+                            <div
+                                class="absolute bottom-3 end-3 bg-white/90 px-2 py-1 rounded-full text-yellow-500 text-sm flex items-center gap-1">
+                                <i class="fas fa-star"></i><span class="text-gray-800 font-semibold">5.0</span>
+                            </div>
+                        </a>
+
+                        <!-- Content -->
+                        <div class="flex flex-col flex-1 p-4">
+                            <div class="flex justify-between text-xs text-gray-500 mb-2">
+                                <span>10 Lessons</span>
+                                <span>1.8 hours</span>
+                            </div>
+
+                            <!-- Title -->
+                            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-1 hover:text-primary transition">
+                                <a href="product.html">Mindful Meditation</a>
+                            </h3>
+
+                            <!-- Description (clamped) -->
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                                Cultivate inner peace through guided meditation practices. Reduce stress and find
+                                clarity.
+                            </p>
+
+                            <!-- Instructor -->
+                            <div class="flex items-center mb-4">
+                                <img src="assets/images/user02.png"
+                                    class="w-7 h-7 rounded-full me-2 object-cover" alt="Instructor" />
+                                <div class="text-sm">
+                                    <p class="font-medium text-gray-900 leading-tight mb-1">Emma Wilson</p>
+                                    <p class="text-xs text-gray-500">Meditation Expert</p>
+                                </div>
+                            </div>
+
+                            <!-- Price and CTA -->
+                            <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-200">
+                                <div class="text-lg font-bold text-primary flex items-center gap-1.5">
+                                    $39
+                                    <span class="text-sm text-gray-400 line-through">$69</span>
+                                </div>
+
+                                <!-- Buttons: Cart + Wishlist -->
+                                <div class="flex items-center gap-2">
+                                    <button class="add-to-cart btn-primary !px-3 !py-2 !text-sm"
+                                        onclick="event.stopPropagation()" data-course-id="3"
+                                        data-course-name="Mindful Meditation" data-course-price="39"
+                                        data-course-image="https://images.unsplash.com/photo-1588286840104-8957b019727f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80">
+                                        <i class="fas fa-cart-plus"></i> Add
+                                    </button>
+                                    <button class="add-to-wishlist p-1 h-10 w-10 btn-secondary"
+                                        onclick="event.stopPropagation()" data-course-id="3"
+                                        aria-label="Add to wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div
+                        class="product-card group flex flex-col bg-white rounded-lg border border-gray-200 overflow-hidden h-full">
+                        <!-- Image Section with Link -->
+                        <a href="product.html" class="relative block overflow-hidden product-img">
+                            <img src="assets/images/product-06.png"
+                                alt="Vinyasa Flow"
+                                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent">
+                            </div>
+                            <!-- Rating Badge -->
+                            <div
+                                class="absolute bottom-3 end-3 bg-white/90 px-2 py-1 rounded-full text-yellow-500 text-sm flex items-center gap-1">
+                                <i class="fas fa-star"></i><span class="text-gray-800 font-semibold">4.8</span>
+                            </div>
+                        </a>
+
+                        <!-- Content -->
+                        <div class="flex flex-col flex-1 p-4">
+                            <div class="flex justify-between text-xs text-gray-500 mb-2">
+                                <span>18 Lessons</span>
+                                <span>4.2 hours</span>
+                            </div>
+
+                            <!-- Title -->
+                            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-1 hover:text-primary transition">
+                                <a href="product.html">Vinyasa Flow Mastery</a>
+                            </h3>
+
+                            <!-- Description (clamped) -->
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                                Dynamic sequences linking breath with movement. Build strength and cardiovascular
+                                fitness.
+                            </p>
+
+                            <!-- Instructor -->
+                            <div class="flex items-center mb-4">
+                                <img src="assets/images/user03.png"
+                                    class="w-7 h-7 rounded-full me-2 object-cover" alt="Instructor" />
+                                <div class="text-sm">
+                                    <p class="font-medium text-gray-900 leading-tight mb-1">Mike Chen</p>
+                                    <p class="text-xs text-gray-500">RYT 200 Certified</p>
+                                </div>
+                            </div>
+
+                            <!-- Price and CTA -->
+                            <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-200">
+                                <div class="text-lg font-bold text-primary flex items-center gap-1.5">
+                                    $79
+                                    <span class="text-sm text-gray-400 line-through">$129</span>
+                                </div>
+
+                                <!-- Buttons: Cart + Wishlist -->
+                                <div class="flex items-center gap-2">
+                                    <button class="add-to-cart btn-primary !px-3 !py-2 !text-sm"
+                                        onclick="event.stopPropagation()" data-course-id="2"
+                                        data-course-name="Vinyasa Flow Mastery" data-course-price="79"
+                                        data-course-image="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80">
+                                        <i class="fas fa-cart-plus"></i> Add
+                                    </button>
+                                    <button class="add-to-wishlist p-1 h-10 w-10 btn-secondary"
+                                        onclick="event.stopPropagation()" data-course-id="2"
+                                        aria-label="Add to wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div
+                        class="product-card group flex flex-col bg-white rounded-lg border border-gray-200 overflow-hidden h-full">
+                        <!-- Image Section with Link -->
+                        <a href="product.html" class="relative block overflow-hidden product-img">
+                            <img src="assets/images/product-04.png"
+                                alt="Yin Yoga"
+                                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent">
+                            </div>
+                            <!-- Rating Badge -->
+                            <div
+                                class="absolute bottom-3 end-3 bg-white/90 px-2 py-1 rounded-full text-yellow-500 text-sm flex items-center gap-1">
+                                <i class="fas fa-star"></i><span class="text-gray-800 font-semibold">4.7</span>
+                            </div>
+                        </a>
+
+                        <!-- Content -->
+                        <div class="flex flex-col flex-1 p-4">
+                            <div class="flex justify-between text-xs text-gray-500 mb-2">
+                                <span>15 Lessons</span>
+                                <span>3.5 hours</span>
+                            </div>
+
+                            <!-- Title -->
+                            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-1 hover:text-primary transition">
+                                <a href="product.html">Yin Yoga Deep Dive</a>
+                            </h3>
+
+                            <!-- Description (clamped) -->
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                                Restorative and meditative practice focusing on deep stretching and connective
+                                tissue.
+                            </p>
+
+                            <!-- Instructor -->
+                            <div class="flex items-center mb-4">
+                                <img src="assets/images/user04.png"
+                                    class="w-7 h-7 rounded-full me-2 object-cover" alt="Instructor" />
+                                <div class="text-sm">
+                                    <p class="font-medium text-gray-900 leading-tight mb-1">David Kumar</p>
+                                    <p class="text-xs text-gray-500">RYT 500 Certified</p>
+                                </div>
+                            </div>
+
+                            <!-- Price and CTA -->
+                            <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-200">
+                                <div class="text-lg font-bold text-primary flex items-center gap-1.5">
+                                    $89
+                                    <span class="text-sm text-gray-400 line-through">$149</span>
+                                </div>
+
+                                <!-- Buttons: Cart + Wishlist -->
+                                <div class="flex items-center gap-2">
+                                    <button class="add-to-cart btn-primary !px-3 !py-2 !text-sm"
+                                        onclick="event.stopPropagation()" data-course-id="4"
+                                        data-course-name="Yin Yoga Deep Dive" data-course-price="89"
+                                        data-course-image="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80">
+                                        <i class="fas fa-cart-plus"></i> Add
+                                    </button>
+                                    <button class="add-to-wishlist p-1 h-10 w-10 btn-secondary"
+                                        onclick="event.stopPropagation()" data-course-id="4"
+                                        aria-label="Add to wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Swiper Navigation -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+
+</main>
+<footer class="bg-gray-900 text-white md:pt-12 pt-10">
+    <div class="container mx-auto px-4">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:gap-8 gap-6 md:mb-8 mb-6">
+            <!-- Company Info -->
+            <div class="space-y-4">
+                <div class="footer-logo md:max-w-[150px] max-w-[110px] mb-4">
+                    <img src="assets/images/footer-logo.png" alt="logo" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-gray-400 leading-relaxed">
+                    Transform your life through the ancient practice of yoga. Join our
+                    community and discover inner peace, strength, and mindfulness.
+                </p>
+            </div>
+            <!-- Quick Links -->
+            <div class="space-y-4 ">
+                <h3 class="md:text-lg text-[16px] font-semibold uppercase tracking-wider">
+                    Quick Links
+                </h3>
+                <ul class="space-y-2">
+                    <li>
+                      <a href="profile.html"
+                      class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                      <i class="fas fa-chevron-right text-xs me-2 text-white"></i>
+                      Profile
+                  </a>
+                    </li>
+                    <li>
+                        <a href="product-list.html"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-chevron-right text-xs me-2 text-white"></i>
+                            Courses
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-chevron-right text-xs me-2 text-white"></i>
+                            Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-chevron-right text-xs me-2 text-white"></i>
+                            About Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Services -->
+            <div class="space-y-4 ">
+                <h3 class="md:text-lg text-[16px] font-semibold uppercase tracking-wider">
+                    Yoga Styles
+                </h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="javascript:"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-seedling text-xs me-2 text-white"></i> Hatha
+                            Yoga
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-fire text-xs me-2 text-white"></i> Vinyasa
+                            Flow
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-om text-xs me-2 text-white"></i> Meditation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-leaf text-xs me-2 text-white"></i> Yin Yoga
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Contact Info -->
+            <div class="space-y-4 ">
+                <h3 class="md:text-lg text-[16px] font-semibold uppercase tracking-wider">
+                    Contact Us
+                </h3>
+                <div class="space-y-3">
+                    <div class="flex items-start">
+                        <i class="fas fa-map-marker-alt text-white mt-1 me-3"></i>
+                        <p class="text-gray-400">
+                            123 Wellness Street, Peace City, PC 12345
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-phone text-white me-3"></i>
+                        <a href="tel:+1 (555) 123-4567" tabindex="0" class="text-gray-400">
+                            +1 (555) 123-4567
+                        </a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope text-white me-3"></i>
+                        <a href="mailto:hello@yogabliss.com" class="text-gray-400">hello@yogabliss.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Divider -->
+        <div class="footer-divider my-6"></div>
+        <!-- Bottom Footer -->
+        <div class="border-t lg:py-6 py-4 flex sm:flex-row flex-col justify-between">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                © 2025 Yoga Bliss. All Rights Reserved.
+            </p>
+            <div class="flex gap-4">
+                <a href="javascript:"
+                    class="social-icon text-gray-400 hover:text-white sm:text-xl text-lg transition-all duration-300">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="javascript:"
+                    class="social-icon text-gray-400 hover:text-white sm:text-xl text-lg transition-all duration-300">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="javascript:"
+                    class="social-icon text-gray-400 hover:text-white sm:text-xl text-lg transition-all duration-300">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="javascript:"
+                    class="social-icon text-gray-400 hover:text-white sm:text-xl text-lg transition-all duration-300">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-6 end-6 bg-purple-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</footer>
+<div id="mobile-menu" class="mobile-menu fixed inset-y-0 end-0 z-[100] bg-white shadow-xl transform translate-x-full transition-transform duration-300 max-w-[325px] w-full ease-in-out overflow-y-auto">
+  <div class="flex justify-between items-center p-4 border-b">
+      <a href="index.html" class="block max-w-[110px] w-full">
+          <img src="assets/images/logo.png" alt="logo" class="logo-img">
+      </a>
+      <button id="close-mobile-menu" class="text-gray-600 hover:text-primary transition-colors">
+          <i class="fas fa-times text-xl"></i>
+      </button>
+  </div>
+ 
+  <nav class="p-4">
+      <ul class="space-y-1">
+          <li>
+              <div class="mobile-dropdown-toggle block py-3 px-4 rounded-lg font-medium bg-primary/10 text-primary hover:bg-gray-100 cursor-pointer flex justify-between items-center transition-colors">
+                  <div>
+                      <i class="fas fa-graduation-cap me-3"></i>Courses
+                  </div>
+                  <i class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+              </div>
+              <div class="mobile-dropdown-content capitalize mt-1">
+                  <a href="product-list.html" class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors">
+                      <i class="fas fa-list me-3 text-primary w-4 text-center"></i>
+                      All Courses
+                  </a>
+                  <a href="product-list.html?level=beginner" class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors">
+                      <i class="fas fa-seedling me-3 text-primary w-4 text-center"></i>
+                      Beginner
+                  </a>
+                  <a href="product-list.html?level=intermediate" class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors">
+                      <i class="fas fa-fire me-3 text-primary w-4 text-center"></i>
+                      Intermediate
+                  </a>
+                  <a href="product-list.html?level=advanced" class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors">
+                      <i class="fas fa-star me-3 text-primary w-4 text-center"></i>
+                      Advanced
+                  </a>
+                  <a href="meditation.html" class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors">
+                      <i class="fas fa-om me-3 text-primary w-4 text-center"></i>
+                      Meditation
+                  </a>
+              </div>
+          </li>
+          <li>
+              <a href="instructors.html" class="block py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-100 transition-colors">
+                  <i class="fas fa-user-graduate me-3"></i>Instructors
+              </a>
+          </li>
+          <li>
+              <a href="about.html" class="block py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-100 transition-colors">
+                  <i class="fas fa-info-circle me-3"></i>About
+              </a>
+          </li>
+          <li>
+              <a href="contact.html" class="block py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-100 transition-colors">
+                  <i class="fas fa-envelope me-3"></i>Contact
+              </a>
+          </li>
+          <li>
+              <a href="blog.html" class="block py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-100 transition-colors">
+                  <i class="fas fa-newspaper me-3"></i>Blog
+              </a>
+          </li>
+      </ul>
+  </nav>
+</div>
+<div id="searchPopup" class="search-popup">
+  <div class="bg-white rounded-lg md:p-8 p-4 w-full max-w-2xl mx-4 shadow-lg">
+      <div class="flex items-center justify-between md:mb-6 mb-4">
+          <h3 class="md:text-2xl text-xl font-bold text-secondary ">Search Yoga Courses</h3>
+          <button onclick="closeSearchPopup()" class="text-gray-500 hover:text-gray-700 text-xl">
+              <i class="fas fa-times"></i>
+          </button>
+      </div>
+      <div class="relative mb-6">
+          <input type="text" placeholder="What yoga practice ?"
+              class="w-full ps-12 pe-4 py-2 text-base border-2 primary-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+          <i class="fas fa-search absolute start-5 top-2.5 text-gray-800 text-lg"></i>
+      </div>
+      <div>
+          <p class="text-sm text-gray-800 mb-3 font-medium">Popular searches:</p>
+          <div class="flex flex-wrap gap-2">
+              <span
+                  class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors">Hatha Yoga</span>
+              <span
+                  class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors">Vinyasa Flow</span>
+              <span
+                  class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors">Meditation</span>
+                  <span
+                  class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors">Restorative</span>
+              <span
+                  class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors">Yin Yoga</span>
+
+              <span
+                  class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors">Power Yoga</span>
+
+            
+          </div>
+      </div>
+  </div>
+</div>
+
+    <script src="swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Video popup functionality
+            const video = document.getElementById('yogaVideo');
+            const playButton = document.getElementById('playButton');
+            const videoPopup = document.getElementById('videoPopup');
+            const popupVideo = document.getElementById('popupVideo');
+            const closePopup = document.getElementById('closePopup');
+
+            // Check if elements exist
+            if (playButton && videoPopup && popupVideo && closePopup) {
+                // Open video popup when clicking play button
+                playButton.addEventListener('click', () => {
+                    console.log('Play button clicked!'); // Debug log
+                    videoPopup.classList.add('active');
+                    document.body.classList.add('no-scroll');
+                    document.documentElement.classList.add('no-scroll');
+                    popupVideo.play();
+                });
+
+                // Close popup and stop video
+                closePopup.addEventListener('click', () => {
+                    videoPopup.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                    document.documentElement.classList.remove('no-scroll');
+                    popupVideo.pause();
+                    popupVideo.currentTime = 0;
+                });
+
+
+                // Close popup when clicking outside video
+                videoPopup.addEventListener('click', (e) => {
+                    if (e.target === videoPopup) {
+                        videoPopup.classList.remove('active');
+                        document.body.classList.remove('no-scroll');
+                        document.documentElement.classList.remove('no-scroll');
+                        popupVideo.pause();
+                        popupVideo.currentTime = 0;
+                    }
+                });
+
+                // Close popup with Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && videoPopup.classList.contains('active')) {
+                        videoPopup.classList.remove('active');
+                        document.body.classList.remove('no-scroll');
+                        document.documentElement.classList.remove('no-scroll');
+                        popupVideo.pause();
+                        popupVideo.currentTime = 0;
+                    }
+                });
+
+                // Handle video end
+                popupVideo.addEventListener('ended', () => {
+                    popupVideo.currentTime = 0;
+                });
+
+                // Handle video error
+                popupVideo.addEventListener('error', () => {
+                    console.error('Error loading video');
+                });
+            } else {
+                console.error('Some video popup elements not found');
+            }
+
+            // Accordion functionality
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-accordion');
+                    const targetContent = document.getElementById(targetId);
+                    const icon = this.querySelector('svg');
+                    
+                    // Close all other accordion items
+                    accordionButtons.forEach(otherButton => {
+                        if (otherButton !== this) {
+                            const otherId = otherButton.getAttribute('data-accordion');
+                            const otherContent = document.getElementById(otherId);
+                            const otherIcon = otherButton.querySelector('svg');
+                            
+                            otherContent.classList.add('hidden');
+                            otherButton.classList.remove('active');
+                            otherIcon.classList.remove('rotate-180');
+                        }
+                    });
+                    
+                    // Toggle current accordion item
+                    if (targetContent.classList.contains('hidden')) {
+                        targetContent.classList.remove('hidden');
+                        this.classList.add('active');
+                        icon.classList.add('rotate-180');
+                    } else {
+                        targetContent.classList.add('hidden');
+                        this.classList.remove('active');
+                        icon.classList.remove('rotate-180');
+                    }
+                });
+            });
+
+            // Review Popup functionality
+            const addReviewBtn = document.getElementById('addReviewBtn');
+            const reviewPopup = document.getElementById('reviewPopup');
+            const reviewOverlay = document.getElementById('reviewOverlay');
+            const reviewModal = document.getElementById('reviewModal');
+            const closeReviewPopup = document.getElementById('closeReviewPopup');
+            const reviewForm = document.getElementById('reviewForm');
+            const stars = document.querySelectorAll('#star-rating .fa-star');
+            const ratingValue = document.getElementById('rating-value');
+
+            if (addReviewBtn && reviewPopup && closeReviewPopup && reviewOverlay && reviewModal) {
+                const openPopup = () => {
+                    reviewPopup.classList.remove('invisible', 'opacity-0');
+                    reviewModal.classList.remove('scale-95');
+                    document.body.classList.add('no-scroll');
+
+
+                    document.documentElement.classList.add('no-scroll');
+                };
+
+                const closePopup = () => {
+                    reviewPopup.classList.add('invisible', 'opacity-0');
+                    reviewModal.classList.add('scale-95');
+                    document.body.classList.remove('no-scroll');
+                    document.documentElement.classList.remove('no-scroll');
+                };
+
+                addReviewBtn.addEventListener('click', openPopup);
+                closeReviewPopup.addEventListener('click', closePopup);
+                reviewOverlay.addEventListener('click', closePopup);
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !reviewPopup.classList.contains('invisible')) {
+                        closePopup();
+                    }
+                });
+            }
+
+            // Star rating
+            stars.forEach(star => {
+                star.addEventListener('click', () => {
+                    const value = star.getAttribute('data-value');
+                    ratingValue.value = value;
+                    stars.forEach(s => {
+                        if (s.getAttribute('data-value') <= value) {
+                            s.classList.remove('far');
+                            s.classList.add('fas', 'text-yellow-500');
+                        } else {
+                            s.classList.remove('fas', 'text-yellow-500');
+                            s.classList.add('far');
+                        }
+                    });
+                });
+            });
+
+            // Review form submission
+            if (reviewForm) {
+                reviewForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const formData = new FormData(reviewForm);
+                    const rating = formData.get('rating');
+                    const review = formData.get('review');
+
+                    if (!rating) {
+                        alert('Please provide a rating.');
+                        return;
+                    }
+                    if (!review.trim()) {
+                        alert('Please write a review.');
+                        return;
+                    }
+
+                    console.log({
+                        rating,
+                        review
+                    });
+
+                    // Close popup after submission
+                    reviewPopup.classList.add('invisible', 'opacity-0');
+                    reviewModal.classList.add('scale-95');
+                    document.body.classList.remove('no-scroll');
+                    reviewForm.reset();
+                    stars.forEach(s => {
+                        s.classList.remove('fas', 'text-yellow-500');
+                        s.classList.add('far');
+                    });
+
+                    alert('Thank you for your review!');
+                });
+            }
+        });
+    </script>
+
+    <!-- Video Popup Modal -->
+    <div id="videoPopup" class="fixed inset-0 bg-black bg-opacity-90 z-[999] flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <div class="relative w-full max-w-4xl mx-4 max-h-[90vh] overflow-y-auto scrollbar-hide">
+            <!-- Video Container -->
+            <div class="relative rounded-lg overflow-hidden">
+              <!-- Video Controls Overlay -->
+              <div class="flex justify-end mb-3">
+                <button id="closePopup" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-lg text-white p-1 w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 backdrop-blur-sm">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+                <video id="popupVideo" class="w-full h-auto max-h-[80vh]" controls preload="metadata">
+                    <source src="assets/images/yoga-video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                
+                
+            </div>
+            
+            <!-- Video Info -->
+            <div class="mt-4 text-center text-white">
+                <h3 class="text-xl font-semibold mb-2">Yoga for Beginners - Course Preview</h3>
+                <p class="text-gray-300">Watch this preview to see what you'll learn in this comprehensive yoga course.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Review Popup -->
+    <div id="reviewPopup"
+      class="fixed inset-0 z-[999] flex items-center justify-center invisible opacity-0 transition-all duration-300">
+      <div id="reviewOverlay" class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div id="reviewModal"
+        class="relative z-10 w-full max-w-lg md:p-6 p-4 mx-4 bg-white rounded-lg shadow-xl md:p-8 transition-transform transform scale-9 max-h-[90vh] overflow-y-auto">
+        <button id="closeReviewPopup" class="absolute top-4 right-4 text-gray-500 hover:text-primary">
+          <i class="fas fa-times text-xl"></i>
+        </button>
+        <h3 class="md:mb-6 mb-4 md:text-2xl text-xl font-bold text-center text-gray-900">Write a Review</h3>
+        <form id="reviewForm">
+          <div class="mb-4 md:mb-6">
+            <label class="block mb-3 font-semibold text-center text-gray-700">Your Rating</label>
+            <div class="flex items-center justify-center gap-2 md:text-3xl text-2xl text-gray-300" id="star-rating">
+              <i class="far fa-star cursor-pointer hover:text-yellow-400 transition-colors" data-value="1"></i>
+              <i class="far fa-star cursor-pointer hover:text-yellow-400 transition-colors" data-value="2"></i>
+              <i class="far fa-star cursor-pointer hover:text-yellow-400 transition-colors" data-value="3"></i>
+              <i class="far fa-star cursor-pointer hover:text-yellow-400 transition-colors" data-value="4"></i>
+              <i class="far fa-star cursor-pointer hover:text-yellow-400 transition-colors" data-value="5"></i>
+            </div>
+            <input type="hidden" name="rating" id="rating-value" required>
+          </div>
+          <div class="mb-4 md:mb-6">
+            <label for="review-message" class="block mb-2 font-semibold text-gray-700">Your Review</label>
+            <textarea id="review-message" name="review" rows="5"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition"
+              placeholder="Share your experience with this course..."></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="w-full btn-primary">Submit Review</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</body>
+</html>

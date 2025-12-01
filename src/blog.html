@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="author" content="yoga-bliss" />
+    <meta name="description" content="yoga-bliss" />
+    <meta name="keywords" content="yoga-bliss" />
+    <link rel="icon" href="assets/images/favicon.png" />
+    <title>yoga-bliss</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="swiper-bundle.min.css" />
+    <link rel="stylesheet" href="tailwind.css" />
+</head>
+<body>
+    <div class="overlay"></div> 
+
+    <header id="mainHeader"
+    class="sticky top-0  w-full z-50 bg-white text-gray-900 transition-all duration-300 ease-in-out">
+  
+        <div class="md:container w-full mx-auto px-4">
+            <div class="flex items-center justify-between py-3">
+                <h1 class="logo">
+                    <a href="index.html" class="block md:max-w-[150px] max-w-[110px] w-full">
+                        <img src="assets/images/logo.png" alt="logo" class="logo-img" />
+                    </a>
+                </h1>
+                <nav class="hidden lg:block">
+                    <ul class="flex items-center gap-5 font-medium">
+                        <li>
+                            <div class="relative" id="coursesDropdown">
+                                <button
+                                    class="flex items-center  transition-colors capitalize"
+                                    onclick="toggleDropdown('coursesMenu', this)">
+                                    Courses
+                                    <i class="fas fa-chevron-down ms-1.5 text-xs"></i>
+                                </button>
+                                <div id="coursesMenu"
+                                    class="hidden absolute start-0 mt-2 w-fit dropdown-menu bg-white shadow-md rounded-md z-10">
+                                    <div class="flex gap-2 justify-between text-nowrap capitalize">
+                                        <ul>
+                                            <li>
+                                                <a href="product-list.html"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300">All
+                                                    Courses</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?level=beginner"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300">Beginner</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?level=intermediate"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300">Intermediate</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?level=advanced"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300">Advanced</a>
+                                            </li>
+                                            <li>
+                                                <a href="meditation.html"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 duration-300">Meditation</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <a href="product-list.html?style=hatha"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors">Hatha
+                                                    Yoga</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?style=vinyasa"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors">Vinyasa
+                                                    Flow</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?style=yin"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors">Yin
+                                                    Yoga</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?style=power"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors">Power
+                                                    Yoga</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-list.html?style=restorative"
+                                                    class="block px-4 py-2 text-sm !text-gray-800 hover:bg-gray-100 transition-colors">Restorative</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="instructors.html"
+                                class="rounded-lg text-gray-900 transition-all duration-300">Instructors</a>
+                        </li>
+                        <li>
+                            <a href="about.html"
+                                class="rounded-lg text-gray-900 transition-all duration-300">About</a>
+                        </li>
+                       
+                        <li>
+                            <a href="contact.html"
+                                class="rounded-lg text-gray-900 transition-all duration-300">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <!-- Search Button for Mobile -->
+                    <button onclick="openSearchPopup()" class="lg:hidden">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+                    <!-- Search Bar for Desktop -->
+                    <div
+                        class="hidden lg:flex items-center bg-transparent px-4 py-2.5 input-search border border-gray-200 rounded-lg">
+                       <i class="fas fa-search text-gray-900 me-3"></i>
+                        <input type="text" placeholder="Search courses, instructors..."
+                            class="bg-transparent outline-none text-sm w-32 lg:w-48 text-gray-900 placeholder-gray-900" />
+                    </div>
+                    <!-- Wishlist Button -->
+                    <div class="relative">
+                        <a href="wishlist.html" class="flex items-center justify-center pe-1.5">
+                            <i class="fas fa-heart lg:text-xl text-lg text-gray-900"></i>
+                            <span
+                                class="absolute -top-1.5 -end-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold shadow-lg">0</span>
+                        </a>
+                    </div>
+                    <!-- Cart Button -->
+                    <div class="relative">
+                        <a href="cart.html" class="flex items-center justify-center pe-1.5">
+                            <i class="fas fa-shopping-cart lg:text-xl text-lg text-gray-900"></i>
+                            <span
+                                class="absolute -top-1.5 -end-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold shadow-lg">0</span>
+                        </a>
+                    </div>
+                    <!-- Login Button -->
+                    <a href="login.html" class="btn-primary login-btn">
+                        <i class="fas fa-user"></i>
+                        <span class="hidden lg:block"> Login</span>
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden" id="mobile-menu-toggle">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Search Popup -->
+            <div id="search-popup"
+                class="lg:hidden absolute top-full start-0 end-0 bg-white border-t border-slate-200 shadow-lg transform -translate-y-full opacity-0 invisible transition-all duration-300">
+                <div class="md:container w-full mx-auto px-4 py-4">
+                    <div class="flex items-center bg-slate-50 border border-slate-200 rounded-lg px-4 py-1">
+                        <i class="fas fa-search me-3"></i>
+                        <input type="text" placeholder="Search courses, instructors..."
+                            class="bg-transparent outline-none text-sm flex-1 text-slate-700 placeholder-slate-400"
+                            autofocus />
+                        <button id="search-close" class="ms-2 p-1 hover:bg-slate-200 rounded">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+    <!-- Common Banner Section -->
+    <section class="relative  bg-[url('assets/images/common-banner-bg.png')] bg-cover md:bg-left bg-center lg:py-20 py-10">
+      <div class="md:container w-full mx-auto px-4">
+      <div class="relative z-[2] text-center text-white max-w-2xl mx-auto px-4 flex flex-col items-center justify-center">
+        <h2 class="text-3xl md:text-5xl font-elsie font-bold mb-3">blog</h2>
+        <nav class="text-sm flex justify-center gap-2 capitalize">
+          <a href="index.html" class="hover:underline">Home</a>
+          <span>/</span>
+          <a href="blog.html" class="hover:underline">blog</a>
+        </nav>
+      </div>
+    </div>
+    </section>
+
+    <section class="py-10 lg:py-20">
+        <div class="md:container w-full mx-auto px-4">
+          
+              <div class="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-6">
+                <!-- Blog Card 1 -->
+                <div class="group bg-white rounded-lg border border-gray-200 overflow-hidden h-full hover:shadow-lg transition-all duration-500">
+                  <div class="relative overflow-hidden">
+                    <img src="assets/images/blog-01.png" alt="Morning Yoga Routine" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div class="absolute top-4 start-4">
+                      <span class="bg-primary text-white px-3 py-1 rounded text-xs font-semibold">Wellness</span>
+                    </div>
+                    <div class="absolute top-4 end-4">
+                      <span class="bg-white/90 text-gray-700 px-2 py-1 rounded text-xs">5 min read</span>
+                    </div>
+                  </div>
+                  <div class="p-4">
+                    <div class="flex items-center text-xs text-gray-500 mb-3">
+                      <i class="fas fa-calendar me-2"></i>
+                      <span>March 15, 2024</span>
+                      <span class="mx-2">•</span>
+                      <i class="fas fa-user me-2"></i>
+                      <span>Sarah Johnson</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                      <a href="article.html">10-Minute Morning Yoga Routine for in the off Beginners</a>
+                    </h3>
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-eye me-1"></i>
+                        <span>2.4k views</span>
+                      </div>
+                      <a href="article.html" class="text-primary font-semibold hover:underline">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Blog Card 2 -->
+                <div class="group bg-white rounded-lg border border-gray-200 overflow-hidden h-full hover:shadow-lg transition-all duration-500">
+                  <div class="relative overflow-hidden">
+                    <img src="assets/images/blog-02.png" alt="Yoga for Stress Relief" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div class="absolute top-4 start-4">
+                      <span class="bg-primary text-white px-3 py-1 rounded text-xs font-semibold">Mindfulness</span>
+                    </div>
+                    <div class="absolute top-4 end-4">
+                      <span class="bg-white/90 text-gray-700 px-2 py-1 rounded text-xs">7 min read</span>
+                    </div>
+                  </div>
+                  <div class="p-4">
+                    <div class="flex items-center text-xs text-gray-500 mb-3">
+                      <i class="fas fa-calendar me-2"></i>
+                      <span>April 2, 2024</span>
+                      <span class="mx-2">•</span>
+                      <i class="fas fa-user me-2"></i>
+                      <span>Michael Chen</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                      <a href="article.html">Yoga for Stress Relief: 5 Calming Poses with yoga style</a>
+                    </h3>
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-eye me-1"></i>
+                        <span>1.8k views</span>
+                      </div>
+                      <a href="article.html" class="text-primary font-semibold hover:underline">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Blog Card 3 -->
+                <div class="group bg-white rounded-lg border border-gray-200 overflow-hidden h-full hover:shadow-lg transition-all duration-500">
+                  <div class="relative overflow-hidden">
+                    <img src="assets/images/blog-03.png" alt="Power Yoga for Strength" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div class="absolute top-4 start-4">
+                      <span class="bg-primary text-white px-3 py-1 rounded text-xs font-semibold">Fitness</span>
+                    </div>
+                    <div class="absolute top-4 end-4">
+                      <span class="bg-white/90 text-gray-700 px-2 py-1 rounded text-xs">6 min read</span>
+                    </div>
+                  </div>
+                  <div class="p-4">
+                    <div class="flex items-center text-xs text-gray-500 mb-3">
+                      <i class="fas fa-calendar me-2"></i>
+                      <span>April 10, 2024</span>
+                      <span class="mx-2">•</span>
+                      <i class="fas fa-user me-2"></i>
+                      <span>Emma Wilson</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                      <a href="article.html">Power Yoga: Build Strength & Mindfulness with off Flexibility</a>
+                    </h3>
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-eye me-1"></i>
+                        <span>2.1k views</span>
+                      </div>
+                      <a href="article.html" class="text-primary font-semibold hover:underline">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Blog Card 4 -->
+                <div class="group bg-white rounded-lg border border-gray-200 overflow-hidden h-full hover:shadow-lg transition-all duration-500">
+                  <div class="relative overflow-hidden">
+                    <img src="assets/images/blog-04.png" alt="Yoga for Better Sleep" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div class="absolute top-4 start-4">
+                      <span class="bg-primary text-white px-3 py-1 rounded text-xs font-semibold">Lifestyle</span>
+                    </div>
+                    <div class="absolute top-4 end-4">
+                      <span class="bg-white/90 text-gray-700 px-2 py-1 rounded text-xs">4 min read</span>
+                    </div>
+                  </div>
+                  <div class="p-4">
+                    <div class="flex items-center text-xs text-gray-500 mb-3">
+                      <i class="fas fa-calendar me-2"></i>
+                      <span>May 1, 2024</span>
+                      <span class="mx-2">•</span>
+                      <i class="fas fa-user me-2"></i>
+                      <span>Priya Patel</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                      <a href="article.html">Yoga for Better Sleep: Evening Flow everyday make</a>
+                    </h3>
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-eye me-1"></i>
+                        <span>1.2k views</span>
+                      </div>
+                      <a href="article.html" class="text-primary font-semibold hover:underline">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Blog Card 5 -->
+                <div class="group bg-white rounded-lg border border-gray-200 overflow-hidden h-full hover:shadow-lg transition-all duration-500">
+                  <div class="relative overflow-hidden">
+                    <img src="assets/images/blog-05.png" alt="Prenatal Yoga" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div class="absolute top-4 start-4">
+                      <span class="bg-primary text-white px-3 py-1 rounded text-xs font-semibold">Prenatal</span>
+                    </div>
+                    <div class="absolute top-4 end-4">
+                      <span class="bg-white/90 text-gray-700 px-2 py-1 rounded text-xs">8 min read</span>
+                    </div>
+                  </div>
+                  <div class="p-4">
+                    <div class="flex items-center text-xs text-gray-500 mb-3">
+                      <i class="fas fa-calendar me-2"></i>
+                      <span>May 10, 2024</span>
+                      <span class="mx-2">•</span>
+                      <i class="fas fa-user me-2"></i>
+                      <span>Linda Gomez</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                      <a href="article.html">Prenatal Yoga: Safe Poses for Prenatal add with Moms-to-Be</a>
+                    </h3>
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-eye me-1"></i>
+                        <span>950 views</span>
+                      </div>
+                      <a href="article.html" class="text-primary font-semibold hover:underline">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Blog Card 6 -->
+                <div class="group bg-white rounded-lg border border-gray-200 overflow-hidden h-full hover:shadow-lg transition-all duration-500">
+                  <div class="relative overflow-hidden">
+                    <img src="assets/images/blog-06.png" alt="Meditation for Beginners" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div class="absolute top-4 start-4">
+                      <span class="bg-primary text-white px-3 py-1 rounded text-xs font-semibold">Meditation</span>
+                    </div>
+                    <div class="absolute top-4 end-4">
+                      <span class="bg-white/90 text-gray-700 px-2 py-1 rounded text-xs">5 min read</span>
+                    </div>
+                  </div>
+                  <div class="p-4">
+                    <div class="flex items-center text-xs text-gray-500 mb-3">
+                      <i class="fas fa-calendar me-2"></i>
+                      <span>May 18, 2024</span>
+                      <span class="mx-2">•</span>
+                      <i class="fas fa-user me-2"></i>
+                      <span>Arjun Mehra</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                      <a href="article.html">Meditation for Beginners: Getting Started with Yoga classes</a>
+                    </h3>
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-eye me-1"></i>
+                        <span>1.5k views</span>
+                      </div>
+                      <a href="article.html" class="text-primary font-semibold hover:underline">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Featured Yoga Tips Section -->
+              <section class="mt-16 bg-primary/5 rounded-lg lg:p-8 p-4">
+                <h2 class="md:text-2xl text-xl font-bold text-primary mb-6 flex items-center gap-2"><i class="fas fa-lightbulb"></i> Featured Yoga Tips</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                  <div class="bg-white rounded-lg border border-gray-200 lg:p-6 p-4 flex flex-col items-center text-center">
+                    <i class="fas fa-spa md:text-3xl text-2xl text-green-500 mb-3"></i>
+                    <h4 class="font-semibold text-lg mb-2">Stay Consistent</h4>
+                    <p class="text-gray-600">Practice yoga regularly, even if it's just 10 minutes a day, to see lasting benefits for body and mind.</p>
+                  </div>
+                  <div class="bg-white rounded-lg border border-gray-200 lg:p-6 p-4 flex flex-col items-center text-center">
+                    <i class="fas fa-heartbeat md:text-3xl text-2xl text-pink-500 mb-3"></i>
+                    <h4 class="font-semibold text-lg mb-2">Listen to Your Body</h4>
+                    <p class="text-gray-600">Honor your body's limits and avoid pushing into pain. Yoga is about self-care, not competition.</p>
+                  </div>
+                  <div class="bg-white rounded-lg border border-gray-200 lg:p-6 p-4 flex flex-col items-center text-center">
+                    <i class="fas fa-wind md:text-3xl text-2xl text-blue-500 mb-3"></i>
+                    <h4 class="font-semibold text-lg mb-2">Focus on Breath</h4>
+                    <p class="text-gray-600">Deep, mindful breathing enhances every yoga pose and helps calm the mind during practice.</p>
+                  </div>
+                </div>
+              </section>
+
+        </div>
+      </section>
+  
+    
+</main>
+<footer class="bg-gray-900 text-white md:pt-12 pt-10">
+    <div class="container mx-auto px-4">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:gap-8 gap-6 md:mb-8 mb-6">
+            <!-- Company Info -->
+            <div class="space-y-4">
+                <div class="footer-logo md:max-w-[150px] max-w-[110px] mb-4">
+                    <img src="assets/images/footer-logo.png" alt="logo" class="w-full h-full object-cover" />
+                </div>
+                <p class="text-gray-400 leading-relaxed">
+                    Transform your life through the ancient practice of yoga. Join our
+                    community and discover inner peace, strength, and mindfulness.
+                </p>
+            </div>
+            <!-- Quick Links -->
+            <div class="space-y-4 ">
+                <h3 class="md:text-lg text-[16px] font-semibold uppercase tracking-wider">
+                    Quick Links
+                </h3>
+                <ul class="space-y-2">
+                    <li>
+                      <a href="profile.html"
+                      class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                      <i class="fas fa-chevron-right text-xs me-2 text-white"></i>
+                      Profile
+                  </a>
+                    </li>
+                    <li>
+                        <a href="product-list.html"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-chevron-right text-xs me-2 text-white"></i>
+                            Courses
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-chevron-right text-xs me-2 text-white"></i>
+                            Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-chevron-right text-xs me-2 text-white"></i>
+                            About Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Services -->
+            <div class="space-y-4 ">
+                <h3 class="md:text-lg text-[16px] font-semibold uppercase tracking-wider">
+                    Yoga Styles
+                </h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="javascript:"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-seedling text-xs me-2 text-white"></i> Hatha
+                            Yoga
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-fire text-xs me-2 text-white"></i> Vinyasa
+                            Flow
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-om text-xs me-2 text-white"></i> Meditation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:"
+                            class="footer-link text-gray-400 hover:text-white flex items-center transition-all duration-300">
+                            <i class="fas fa-leaf text-xs me-2 text-white"></i> Yin Yoga
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Contact Info -->
+            <div class="space-y-4 ">
+                <h3 class="md:text-lg text-[16px] font-semibold uppercase tracking-wider">
+                    Contact Us
+                </h3>
+                <div class="space-y-3">
+                    <div class="flex items-start">
+                        <i class="fas fa-map-marker-alt text-white mt-1 me-3"></i>
+                        <p class="text-gray-400">
+                            123 Wellness Street, Peace City, PC 12345
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-phone text-white me-3"></i>
+                        <a href="tel:+1 (555) 123-4567" tabindex="0" class="text-gray-400">
+                            +1 (555) 123-4567
+                        </a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope text-white me-3"></i>
+                        <a href="mailto:hello@yogabliss.com" class="text-gray-400">hello@yogabliss.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Divider -->
+        <div class="footer-divider my-6"></div>
+        <!-- Bottom Footer -->
+        <div class="border-t lg:py-6 py-4 flex sm:flex-row flex-col justify-between">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                © 2025 Yoga Bliss. All Rights Reserved.
+            </p>
+            <div class="flex gap-4">
+                <a href="javascript:"
+                    class="social-icon text-gray-400 hover:text-white sm:text-xl text-lg transition-all duration-300">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="javascript:"
+                    class="social-icon text-gray-400 hover:text-white sm:text-xl text-lg transition-all duration-300">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="javascript:"
+                    class="social-icon text-gray-400 hover:text-white sm:text-xl text-lg transition-all duration-300">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="javascript:"
+                    class="social-icon text-gray-400 hover:text-white sm:text-xl text-lg transition-all duration-300">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-6 end-6 bg-purple-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</footer>
+<div id="mobile-menu" class="mobile-menu fixed inset-y-0 end-0 z-[100] bg-white shadow-xl transform translate-x-full transition-transform duration-300 max-w-[325px] w-full ease-in-out overflow-y-auto">
+  <div class="flex justify-between items-center p-4 border-b">
+      <a href="index.html" class="block max-w-[110px] w-full">
+          <img src="assets/images/logo.png" alt="logo" class="logo-img">
+      </a>
+      <button id="close-mobile-menu" class="text-gray-600 hover:text-primary transition-colors">
+          <i class="fas fa-times text-xl"></i>
+      </button>
+  </div>
+ 
+  <nav class="p-4">
+      <ul class="space-y-1">
+          <li>
+              <div class="mobile-dropdown-toggle block py-3 px-4 rounded-lg font-medium bg-primary/10 text-primary hover:bg-gray-100 cursor-pointer flex justify-between items-center transition-colors">
+                  <div>
+                      <i class="fas fa-graduation-cap me-3"></i>Courses
+                  </div>
+                  <i class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+              </div>
+              <div class="mobile-dropdown-content capitalize mt-1">
+                  <a href="product-list.html" class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors">
+                      <i class="fas fa-list me-3 text-primary w-4 text-center"></i>
+                      All Courses
+                  </a>
+                  <a href="product-list.html?level=beginner" class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors">
+                      <i class="fas fa-seedling me-3 text-primary w-4 text-center"></i>
+                      Beginner
+                  </a>
+                  <a href="product-list.html?level=intermediate" class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors">
+                      <i class="fas fa-fire me-3 text-primary w-4 text-center"></i>
+                      Intermediate
+                  </a>
+                  <a href="product-list.html?level=advanced" class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors">
+                      <i class="fas fa-star me-3 text-primary w-4 text-center"></i>
+                      Advanced
+                  </a>
+                  <a href="meditation.html" class="block py-2 px-4 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center transition-colors">
+                      <i class="fas fa-om me-3 text-primary w-4 text-center"></i>
+                      Meditation
+                  </a>
+              </div>
+          </li>
+          <li>
+              <a href="instructors.html" class="block py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-100 transition-colors">
+                  <i class="fas fa-user-graduate me-3"></i>Instructors
+              </a>
+          </li>
+          <li>
+              <a href="about.html" class="block py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-100 transition-colors">
+                  <i class="fas fa-info-circle me-3"></i>About
+              </a>
+          </li>
+          <li>
+              <a href="contact.html" class="block py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-100 transition-colors">
+                  <i class="fas fa-envelope me-3"></i>Contact
+              </a>
+          </li>
+          <li>
+              <a href="blog.html" class="block py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-gray-100 transition-colors">
+                  <i class="fas fa-newspaper me-3"></i>Blog
+              </a>
+          </li>
+      </ul>
+  </nav>
+</div>
+<div id="searchPopup" class="search-popup">
+    <div class="bg-white rounded-lg md:p-8 p-4 w-full max-w-2xl mx-4 shadow-lg">
+        <div class="flex items-center justify-between md:mb-6 mb-4">
+            <h3 class="md:text-2xl text-xl font-bold text-secondary ">Search Yoga Courses</h3>
+            <button onclick="closeSearchPopup()" class="text-gray-500 hover:text-gray-700 text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="relative mb-6">
+            <input type="text" placeholder="What yoga practice ?"
+                class="w-full ps-12 pe-4 py-2 text-base border-2 primary-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+            <i class="fas fa-search absolute start-5 top-2.5 text-gray-800 text-lg"></i>
+        </div>
+        <div>
+            <p class="text-sm text-gray-800 mb-3 font-medium">Popular searches:</p>
+            <div class="flex flex-wrap gap-2">
+                <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors">Hatha Yoga</span>
+                <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors">Vinyasa Flow</span>
+                <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors">Meditation</span>
+                    <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors">Restorative</span>
+                <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors">Yin Yoga</span>
+
+                <span
+                    class="px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-800 cursor-pointer hover:text-primary transition-colors">Power Yoga</span>
+
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
